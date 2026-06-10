@@ -7,13 +7,13 @@ export default function ProjectCard({
   project: Project;
 }) {
   return (
-    <div className="group border border-neutral-200 dark:border-white/10 rounded-2xl p-6 bg-white/50 dark:bg-white/5 hover:shadow-xl hover:border-violet-400/30 transition-all duration-300">
+    <div className="group border border-blue-100 dark:border-blue-800/30 rounded-2xl p-6 bg-white/70 dark:bg-blue-950/30 hover:shadow-xl hover:shadow-blue-100/50 hover:border-[#1c3faa]/30 transition-all duration-300">
 
-      <h2 className="text-xl font-bold text-neutral-800 dark:text-white">
+      <h2 className="text-xl font-bold text-blue-950 dark:text-white">
         {project.title}
       </h2>
 
-      <p className="mt-3 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+      <p className="mt-3 text-sm leading-relaxed text-blue-900/70 dark:text-blue-200/80">
         {project.description}
       </p>
 
@@ -21,7 +21,7 @@ export default function ProjectCard({
         {project.technologies.map((t) => (
           <span
             key={t}
-            className="rounded-full bg-violet-100 dark:bg-violet-500/10 px-2.5 py-0.5 text-xs font-medium text-violet-700 dark:text-violet-300"
+            className="rounded-full bg-blue-100/80 dark:bg-blue-500/10 px-2.5 py-0.5 text-xs font-medium text-[#1c3faa] dark:text-blue-300"
           >
             {t}
           </span>
@@ -31,7 +31,7 @@ export default function ProjectCard({
       <div className="flex gap-3 mt-6">
         <Link
           href={`/projects/${project.slug}`}
-          className="px-4 py-2 rounded-lg bg-violet-600 text-white text-sm font-medium hover:bg-violet-700 transition-colors"
+          className="px-4 py-2 rounded-lg bg-[#1c3faa] text-white text-sm font-medium hover:bg-[#1a2f7a] transition-colors"
         >
           Details
         </Link>
@@ -41,7 +41,7 @@ export default function ProjectCard({
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-neutral-200 dark:border-white/10 rounded-lg text-sm font-medium hover:bg-neutral-100 dark:hover:bg-white/5 transition-colors"
+            className="px-4 py-2 border border-blue-200 dark:border-blue-800/40 rounded-lg text-sm font-medium text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
           >
             GitHub
           </a>
@@ -49,4 +49,4 @@ export default function ProjectCard({
       </div>
     </div>
   );
-}
+}

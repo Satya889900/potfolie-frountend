@@ -35,8 +35,4 @@ export const navLinks = [
   name: "Resume",
   href: "/resume",
 },
- {
-    name: "Dashboard",
-    href: "/dashboard",
-  },
 ];

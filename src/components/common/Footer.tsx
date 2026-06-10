@@ -14,11 +14,11 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-24 overflow-hidden border-t border-neutral-200/60 dark:border-white/5">
+    <footer className="relative mt-24 overflow-hidden border-t border-blue-200/60 dark:border-blue-800/50">
       {/* ── glow accent ──────────────────────────── */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-violet-500/10 dark:bg-violet-500/5 blur-3xl"
+        className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-[#1c3faa]/10 dark:bg-blue-500/5 blur-3xl -z-10"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
@@ -30,12 +30,12 @@ export default function Footer() {
               href="/"
               className="inline-block text-2xl font-extrabold tracking-tight"
             >
-              <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#1c3faa] via-[#3b5bdb] to-[#5c7cfa] bg-clip-text text-transparent">
                 Satya
               </span>
-              <span className="text-neutral-800 dark:text-white">.</span>
+              <span className="text-blue-900 dark:text-white">.</span>
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-blue-800 dark:text-blue-200">
               Full-stack developer crafting modern web experiences with clean
               code and creative design.
             </p>
@@ -49,16 +49,16 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="
+                  className={`
                     flex h-9 w-9 items-center justify-center rounded-lg
-                    border border-neutral-200 dark:border-white/10
+                    border border-blue-200 dark:border-blue-800/50
                     bg-white/60 dark:bg-white/5
-                    text-neutral-600 dark:text-neutral-400
+                    text-blue-800 dark:text-blue-200
                     transition-all duration-200
-                    hover:scale-110 hover:border-violet-400/50
-                    hover:text-violet-600 dark:hover:text-violet-400
+                    hover:scale-110 hover:border-blue-400/50
+                    hover:text-[#1c3faa] dark:hover:text-blue-400
                     hover:shadow-md
-                  "
+                  `}
                 >
                   <s.icon size={16} />
                 </a>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* quick links column 1 */}
           <div className="md:col-span-4 lg:col-span-3">
-            <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+            <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -76,7 +76,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-600 transition-colors duration-200 hover:text-violet-600 dark:text-neutral-400 dark:hover:text-violet-400"
+                    className="text-sm text-blue-800 transition-colors duration-200 hover:text-[#1c3faa] dark:text-blue-200 dark:hover:text-blue-400"
                   >
                     {link.name}
                   </Link>
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* quick links column 2 */}
           <div className="md:col-span-4 lg:col-span-4">
-            <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+            <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               Explore
             </h4>
             <ul className="space-y-2">
@@ -95,7 +95,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-600 transition-colors duration-200 hover:text-violet-600 dark:text-neutral-400 dark:hover:text-violet-400"
+                    className="text-sm text-blue-800 transition-colors duration-200 hover:text-[#1c3faa] dark:text-blue-200 dark:hover:text-blue-400"
                   >
                     {link.name}
                   </Link>
@@ -106,10 +106,10 @@ export default function Footer() {
         </div>
 
         {/* ── bottom bar ──────────────────────────── */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-neutral-200/60 dark:border-white/5 py-6 text-xs text-neutral-400 dark:text-neutral-500 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-blue-200/60 dark:border-blue-800/50 py-6 text-xs text-blue-600 dark:text-blue-400 sm:flex-row">
           <p>© {year} Satya Prakash. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Built with <Heart size={12} className="text-pink-500 animate-pulse" /> using Next.js
+            Built with <Heart size={12} className="text-[#1c3faa] dark:text-[#5c7cfa] animate-pulse" /> using Next.js
           </p>
         </div>
       </div>

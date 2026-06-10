@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Navy Blue Light-Mode Palette ─────────────────────────── */
+:root {
+  --navy-50:  #eef2ff;
+  --navy-100: #dbe4ff;
+  --navy-200: #bac8ff;
+  --navy-300: #91a7ff;
+  --navy-400: #5c7cfa;
+  --navy-500: #3b5bdb;
+  --navy-600: #1c3faa;   /* primary navy blue */
+  --navy-700: #1a2f7a;
+  --navy-800: #162460;
+  --navy-900: #0d1a4a;
+}
+
 html {
   scroll-behavior: smooth;
 }

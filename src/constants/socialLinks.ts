@@ -9,27 +9,17 @@ import {
 export const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/satyaprakash",
+    href: "https://github.com/Satya889900",
     icon: GithubIcon,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/satyaprakash",
+    href: "https://linkedin.com/in/satya-prakash-542611211",
     icon: LinkedinIcon,
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/satyaprakash",
-    icon: TwitterIcon,
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com/satyaprakash",
-    icon: InstagramIcon,
-  },
-  {
     name: "Email",
-    href: "mailto:satya@example.com",
+    href: "mailto:satyaprakash121122@gmail.com",
     icon: Mail,
   },
 ];
