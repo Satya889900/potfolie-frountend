@@ -8,6 +8,11 @@ import {
 
 export const socialLinks = [
   {
+    name: "Twitter",
+    href: "https://twitter.com",
+    icon: TwitterIcon,
+  },
+  {
     name: "GitHub",
     href: "https://github.com/Satya889900",
     icon: GithubIcon,
@@ -16,6 +21,11 @@ export const socialLinks = [
     name: "LinkedIn",
     href: "https://linkedin.com/in/satya-prakash-542611211",
     icon: LinkedinIcon,
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com",
+    icon: InstagramIcon,
   },
   {
     name: "Email",

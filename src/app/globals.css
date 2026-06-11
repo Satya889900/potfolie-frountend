@@ -2,18 +2,21 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ── Navy Blue Light-Mode Palette ─────────────────────────── */
+/* ── Earthy Green/Gold Palette ─────────────────────────── */
 :root {
-  --navy-50:  #eef2ff;
-  --navy-100: #dbe4ff;
-  --navy-200: #bac8ff;
-  --navy-300: #91a7ff;
-  --navy-400: #5c7cfa;
-  --navy-500: #3b5bdb;
-  --navy-600: #1c3faa;   /* primary navy blue */
-  --navy-700: #1a2f7a;
-  --navy-800: #162460;
-  --navy-900: #0d1a4a;
+  --green-50: #f4f6f0;
+  --green-100: #e8efe2;
+  --green-200: #d2e0c8;
+  --green-300: #a8c89c;
+  --green-400: #5a8a5c;
+  --green-500: #2a5a40;
+  --green-600: #1b3b36;
+  --green-700: #152e2a;
+  --green-800: #0f1714;
+  --gold-300: #d2bfa6;
+  --gold-400: #c4a572;
+  --gold-500: #b8905b;
+  --gold-600: #a07c4b;
 }
 
 html {
@@ -40,4 +43,22 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+/* ── Sparkle animation ── */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
 }

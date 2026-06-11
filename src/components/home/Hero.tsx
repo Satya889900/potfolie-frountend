@@ -1,256 +1,312 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { Zap, Layout, Accessibility, Server, Shield, Cloud, Play, ChevronRight, BarChart2 } from "lucide-react";
 
+/* ── Data ─────────────────────────────────────────────────── */
+const frontendFeatures = [
+  {
+    icon: <Zap size={16} strokeWidth={2.5} />,
+    title: "Fast & Optimized",
+    sub: "Blazing fast performance",
+  },
+  {
+    icon: <Layout size={16} strokeWidth={2.5} />,
+    title: "Modern UI/UX",
+    sub: "Clean, intuitive & responsive",
+  },
+  {
+    icon: <Accessibility size={16} strokeWidth={2.5} />,
+    title: "Accessible",
+    sub: "Inclusive for everyone",
+  },
+];
+
+const backendFeatures = [
+  {
+    icon: <BarChart2 size={16} strokeWidth={2.5} />,
+    title: "Scalable",
+    sub: "Built to handle growth",
+  },
+  {
+    icon: <Shield size={16} strokeWidth={2.5} />,
+    title: "Secure",
+    sub: "Security by design",
+  },
+  {
+    icon: <Cloud size={16} strokeWidth={2.5} />,
+    title: "Reliable",
+    sub: "99.9% uptime focus",
+  },
+];
+
+const backendTechs = ["Node.js", "PostgreSQL", "REST", "AI"];
+
+const stats = [
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+      </svg>
+    ),
+    value: "20+",
+    label: "Projects completed",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
+    value: "10+",
+    label: "Happy Clients",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+      </svg>
+    ),
+    value: "3+",
+    label: "Years Experience",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </svg>
+    ),
+    value: "Clean Code",
+    label: "Best Practices",
+  },
+];
+
+const centerTabs = ["UF/UX", "Vue", "API"];
+
+/* ── Component ─────────────────────────────────────────────── */
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0.5);
-  const smoothMouseX = useSpring(mouseX, { stiffness: 280, damping: 28 });
+  const [hoverSide, setHoverSide] = useState<"left" | "right" | null>(null);
 
-  const clipPath = useTransform(
-    smoothMouseX,
-    (v) => `polygon(${v * 100}% 0%, 100% 0%, 100% 100%, ${v * 100}% 100%)`
-  );
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    mouseX.set(Math.max(0.05, Math.min((e.clientX - rect.left) / rect.width, 0.95)));
-  };
+  const leftWidth = hoverSide === "left" ? "70%" : hoverSide === "right" ? "30%" : "50%";
+  const rightWidth = hoverSide === "right" ? "70%" : hoverSide === "left" ? "30%" : "50%";
 
   return (
-    <section 
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => mouseX.set(0.5)}
-      className="
-      relative min-h-screen w-full overflow-hidden select-none
-      flex flex-col items-center justify-center
-      bg-white dark:bg-[#060d24]
-      transition-colors duration-500
-    ">
+    <section className="relative w-full overflow-hidden flex flex-col pb-12">
+      {/* ── SPLIT BACKGROUND ── */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 flex z-0">
+        <div className="h-full bg-[#f4f6f0] transition-all duration-700 ease-in-out" style={{ width: leftWidth }} />
+        <div className="h-full bg-[#1b3b36] transition-all duration-700 ease-in-out" style={{ width: rightWidth }} />
+      </div>
 
-      {/* ── LIGHT MODE background ── */}
-      <div aria-hidden className="dark:hidden pointer-events-none absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, #dbeafe 0%, #eff6ff 40%, #ffffff 100%)" }} />
-      <div aria-hidden className="dark:hidden pointer-events-none absolute top-[-60px] left-[-60px] w-[480px] h-[480px] rounded-full bg-blue-200/60 blur-[90px]" />
-      <div aria-hidden className="dark:hidden pointer-events-none absolute bottom-[-40px] right-[-40px] w-[400px] h-[400px] rounded-full bg-indigo-200/50 blur-[80px]" />
-      <div aria-hidden className="dark:hidden pointer-events-none absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-violet-100/60 blur-[70px]" />
+      {/* Decorative stars */}
+      <div aria-hidden className="pointer-events-none absolute top-32 right-[25%] text-[#b8905b]/60 z-10">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4 5.6 21.2 8 14 2 9.2h7.6z"/></svg>
+      </div>
+      <div aria-hidden className="pointer-events-none absolute top-48 left-[20%] text-[#b8905b]/40 z-10">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4 5.6 21.2 8 14 2 9.2h7.6z"/></svg>
+      </div>
 
-      {/* ── DARK MODE background ── */}
-      <div aria-hidden className="hidden dark:block pointer-events-none absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, #0f1f5c 0%, #060d24 50%, #060d24 100%)" }} />
-      <div aria-hidden className="hidden dark:block pointer-events-none absolute top-[-100px] left-[-100px] w-[560px] h-[560px] rounded-full bg-[#1c3faa]/25 blur-[100px]" />
-      <div aria-hidden className="hidden dark:block pointer-events-none absolute bottom-[-80px] right-[-80px] w-[460px] h-[460px] rounded-full bg-[#3b5bdb]/18 blur-[90px]" />
-      <div aria-hidden className="hidden dark:block pointer-events-none absolute top-1/3 right-1/4 w-[280px] h-[280px] rounded-full bg-violet-700/10 blur-[60px]" />
+      {/* ── MAIN CONTENT ── */}
+      <div className="relative z-10 flex flex-col w-full">
 
-      {/* Dot grid */}
-      <div aria-hidden className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(28,63,170,0.12) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }} />
+        {/* Three-column layout */}
+        <div className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 xl:px-20 pt-8 pb-12 w-full max-w-full 2xl:max-w-[1900px] mx-auto gap-8 lg:gap-4">
 
-      {/* ── TYPOGRAPHY COLUMNS ── */}
-      <div className="absolute inset-0 flex items-center justify-between px-8 md:px-16 xl:px-24 pointer-events-none z-10">
+          {/* ════════════════════════════════════
+              LEFT — Frontend
+          ════════════════════════════════════ */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            onMouseEnter={() => setHoverSide("left")}
+            onMouseLeave={() => setHoverSide(null)}
+            className={`flex flex-col w-full lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left transition-all duration-700 ${
+              hoverSide === "right" ? "opacity-15 blur-[5px] scale-85" : "opacity-100 blur-0 scale-100"
+            }`}
+          >
+            {/* Top badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 w-fit bg-[#e8efe2] border-[#d2bfa6]/60 text-[#b8905b] text-[10px] font-extrabold tracking-[0.18em] uppercase shadow-[0_2px_10px_rgba(184,144,91,0.1)]">
+              <Zap size={11} fill="currentColor" className="text-[#b8905b]" /> FULL STACK DEVELOPER
+            </div>
 
-        {/* Left: Frontend */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="hidden md:flex flex-col w-[32%]"
-        >
-          <span className="text-[10px] uppercase tracking-[0.35em] font-bold mb-3 block
-            text-[#3b5bdb] dark:text-[#748ffc]">
-            ✦ Visual Layer
-          </span>
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black leading-[0.95] tracking-tight mb-5
-            text-[#1c3faa] dark:text-white transition-colors">
-            front<span className="text-transparent bg-clip-text
-              bg-gradient-to-br from-[#1c3faa] via-[#3b5bdb] to-[#7048e8]
-              dark:from-[#5c7cfa] dark:via-[#a5b4fc] dark:to-[#c4b5fd]">
-              end.
+            {/* Label */}
+            <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 text-[#a07c4b]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
+              VISUAL LAYER
             </span>
-          </h1>
-          <div className="flex items-center gap-2 mb-5">
-            <div className="h-[2px] w-8 rounded-full bg-gradient-to-r from-[#1c3faa] to-[#7048e8] dark:from-[#5c7cfa] dark:to-[#c4b5fd]" />
-            <div className="h-[2px] w-3 rounded-full bg-[#1c3faa]/20 dark:bg-white/15" />
-          </div>
-          <p className="text-[14px] leading-relaxed max-w-[220px]
-            text-[#1e40af]/65 dark:text-white/45 transition-colors">
-            Pixel-perfect interfaces with motion, accessibility, and depth.
-          </p>
-          {/* Tech pills */}
-          <div className="flex flex-wrap gap-2 mt-5">
-            {["React", "Next.js", "Tailwind"].map((t) => (
-              <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-full border tracking-wide
-                border-[#1c3faa]/20 text-[#1c3faa]/70 bg-[#1c3faa]/5
-                dark:border-[#5c7cfa]/25 dark:text-[#a5b4fc] dark:bg-[#5c7cfa]/8
-                transition-colors">
-                {t}
-              </span>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Right: Backend */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="hidden md:flex flex-col items-end w-[32%] text-right"
-        >
-          <span className="text-[10px] uppercase tracking-[0.35em] font-bold mb-3 block
-            text-[#3b5bdb] dark:text-[#748ffc]">
-            Logic Layer ✦
-          </span>
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black leading-[0.95] tracking-tight mb-5 font-mono
-            text-[#1c3faa] dark:text-white transition-colors">
-            &lt;back<span className="text-transparent bg-clip-text
-              bg-gradient-to-bl from-[#7048e8] via-[#3b5bdb] to-[#1c3faa]
-              dark:from-[#c4b5fd] dark:via-[#a5b4fc] dark:to-[#5c7cfa]">
-              end/&gt;
+            {/* Heading */}
+            <h1 className="text-[4.2rem] xl:text-[5.5rem] font-black leading-[0.9] tracking-tight mb-4 text-[#1b3b36]">
+              frontend.
+            </h1>
+
+            {/* Description */}
+            <p className="text-[14px] leading-relaxed mb-10 text-[#1b3b36]/80 font-medium max-w-[90%]">
+              Pixel-perfect interfaces with modern, accessibility, and depth.
+            </p>
+
+            {/* Feature lists */}
+            <div className="flex flex-col gap-5 mb-10 w-full pl-1">
+              {frontendFeatures.map(({ icon, title, sub }) => (
+                <div key={title} className="flex items-center gap-4 group cursor-default">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-[#b8905b] text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="scale-[0.8]">{icon}</div>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[15px] font-extrabold leading-tight text-[#1b3b36] mb-0.5">{title}</p>
+                    <p className="text-[12px] text-[#1b3b36]/70 font-medium">{sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex items-center gap-5 w-full">
+              <Link href="/projects"
+                className="flex items-center gap-2 px-6 py-3 rounded-full text-[13px] font-bold text-[#1b3b36] bg-gradient-to-r from-[#c4a572] to-[#a07c4b] shadow-[0_8px_20px_rgba(160,124,75,0.3)] hover:scale-105 transition-transform duration-300">
+                View Projects
+                <ChevronRight size={14} strokeWidth={3} />
+              </Link>
+              <Link href="/about"
+                className="group flex items-center gap-2 text-[13px] font-extrabold text-[#1b3b36] hover:text-[#a07c4b] transition-colors duration-300">
+                See My Work
+                <div className="w-7 h-7 rounded-full border-2 border-current flex items-center justify-center text-[#1b3b36] group-hover:text-[#a07c4b] transition-colors">
+                  <Play size={10} fill="currentColor" className="ml-0.5" />
+                </div>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* ════════════════════════════════════
+              CENTER — Static Hero Image
+          ════════════════════════════════════ */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="relative flex-shrink-0 z-20 w-full lg:w-[50%] xl:w-[50%] max-w-[900px] flex flex-col items-center"
+          >
+            {/* Tabs floating above */}
+            <div className="flex justify-center gap-3 mb-4 w-full relative z-30">
+              <div className="px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm bg-[#f4f6f0]/80 border-[#1b3b36]/10 text-[#1b3b36]">
+                UF/UX
+              </div>
+              <div className="px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm bg-[#1b3b36]/80 border-[#b8905b]/20 text-[#e8efe2]">
+                Vue
+              </div>
+              <div className="px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm bg-[#1b3b36]/80 border-[#b8905b]/20 text-[#e8efe2]">
+                API
+              </div>
+            </div>
+
+            {/* Image container with floating tabs */}
+            <div 
+              className="relative w-full aspect-[4/3.5] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1b3b36]/30 border-4 border-[#1b3b36]/5 bg-[#1b3b36] transition-all duration-700 ease-in-out"
+              style={{
+                transform: hoverSide === "left" ? "perspective(1200px) rotateY(10deg) scale(1.1)" : hoverSide === "right" ? "perspective(1200px) rotateY(-10deg) scale(1.1)" : "perspective(1200px) rotateY(0deg) scale(1)",
+              }}
+            >
+              {/* Image */}
+              <Image src="/hero_split.png" alt="Frontend and Backend Developer" fill className="object-cover" priority />
+              
+              {/* Bottom labels inside image */}
+              <div className="absolute bottom-4 inset-x-0 flex justify-between px-10 text-white text-[10px] font-extrabold tracking-[0.2em] uppercase">
+                <span className="flex items-center gap-2"><Layout size={12}/> FRONTEND</span>
+                <span className="flex items-center gap-2"><Server size={12}/> BACKEND</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ════════════════════════════════════
+              RIGHT — Backend
+          ════════════════════════════════════ */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            onMouseEnter={() => setHoverSide("right")}
+            onMouseLeave={() => setHoverSide(null)}
+            className={`flex flex-col w-full lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left mt-12 lg:mt-0 transition-all duration-700 ${
+              hoverSide === "left" ? "opacity-15 blur-[5px] scale-85" : "opacity-100 blur-0 scale-100"
+            }`}
+          >
+            {/* Label */}
+            <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 text-[#c4a572]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c4a572]" />
+              LOGIC LAYER
             </span>
-          </h1>
-          <div className="flex items-center justify-end gap-2 mb-5">
-            <div className="h-[2px] w-3 rounded-full bg-[#1c3faa]/20 dark:bg-white/15" />
-            <div className="h-[2px] w-8 rounded-full bg-gradient-to-l from-[#1c3faa] to-[#7048e8] dark:from-[#5c7cfa] dark:to-[#c4b5fd]" />
-          </div>
-          <p className="text-[14px] leading-relaxed max-w-[220px]
-            text-[#1e40af]/65 dark:text-white/45 transition-colors">
-            Scalable, secure, and resilient server architectures built to last.
-          </p>
-          {/* Tech pills */}
-          <div className="flex flex-wrap justify-end gap-2 mt-5">
-            {["Node.js", "PostgreSQL", "REST"].map((t) => (
-              <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-full border tracking-wide
-                border-[#7048e8]/20 text-[#7048e8]/80 bg-[#7048e8]/5
-                dark:border-[#c4b5fd]/20 dark:text-[#c4b5fd] dark:bg-[#c4b5fd]/8
-                transition-colors">
-                {t}
-              </span>
-            ))}
+
+            {/* Heading */}
+            <h1 className="text-[4.2rem] xl:text-[5.5rem] font-bold leading-[0.9] tracking-tight mb-4 font-serif text-[#d2bfa6] drop-shadow-[0_0_15px_rgba(210,191,166,0.3)]">
+              &lt;backend/&gt;
+            </h1>
+
+            {/* Description */}
+            <p className="text-[14px] leading-relaxed mb-10 text-[#e8efe2]/80 font-medium max-w-[90%]">
+              Scalable, secure, and resilient server architectures built to last.
+            </p>
+
+            {/* Feature lists */}
+            <div className="flex flex-col gap-5 mb-10 w-full pl-1">
+              {backendFeatures.map(({ icon, title, sub }) => (
+                <div key={title} className="flex items-center gap-4 group cursor-default">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-[#c4a572] text-[#1b3b36] shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="scale-[0.8]">{icon}</div>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[15px] font-extrabold leading-tight text-[#e8efe2] mb-0.5">{title}</p>
+                    <p className="text-[12px] text-[#e8efe2]/60 font-medium">{sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Tech pills */}
+            <div className="flex flex-wrap gap-2 justify-start">
+              {backendTechs.map((t) => (
+                <span key={t}
+                  className="text-[11px] font-bold px-4 py-1.5 rounded-xl border tracking-wider bg-transparent border-[#c4a572]/30 text-[#e8efe2]/80">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ════════════════════════════════════
+            BOTTOM STATS BAR
+        ════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto w-full max-w-[1000px] px-6 relative z-30"
+        >
+          <div className="rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(27,59,54,0.15)] overflow-hidden">
+            <div className="flex flex-col md:flex-row divide-y-2 md:divide-y-0 md:divide-x-2 divide-[#f4f6f0]">
+              {stats.map(({ icon, value, label }) => (
+                <div key={label} className="flex-1 flex items-center justify-center gap-4 py-6 px-4">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[#1b3b36] text-[#b8905b] shadow-inner">
+                    {icon}
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xl font-black text-[#1b3b36] leading-none mb-1">
+                      {value}
+                    </p>
+                    <p className="text-[11px] font-extrabold text-[#1b3b36]/60 leading-tight uppercase tracking-wider">
+                      {label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
-
-      {/* ── INTERACTIVE IMAGE REVEAL ── */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-        className="relative w-[340px] h-[430px] sm:w-[420px] sm:h-[520px] lg:w-[500px] lg:h-[620px] xl:w-[580px] xl:h-[720px] z-20 pointer-events-none rounded-[2rem] overflow-hidden touch-none"
-        style={{
-          boxShadow: "0 0 0 1px rgba(59,91,219,0.2), 0 30px 80px rgba(28,63,170,0.28), 0 0 0 6px rgba(255,255,255,0.06)",
-        }}
-      >
-        {/* Base image — Frontend */}
-        <div className="absolute inset-0">
-          <Image src="/imges45.jpg" alt="Frontend" fill className="object-cover" priority />
-          <div className="absolute inset-0
-            bg-gradient-to-t from-blue-900/30 via-transparent to-transparent
-            dark:from-[#060d24]/40 dark:via-transparent dark:to-transparent
-            transition-colors" />
-        </div>
-
-        {/* Reveal image — Backend */}
-        <motion.div style={{ clipPath }} className="absolute inset-0">
-          <Image src="/imge4.jpg" alt="Backend" fill className="object-cover" priority />
-          <div className="absolute inset-0
-            bg-gradient-to-t from-violet-900/30 via-transparent to-transparent
-            dark:from-[#060d24]/40 dark:via-transparent dark:to-transparent
-            transition-colors" />
-        </motion.div>
-
-        {/* Divider line */}
-        <motion.div
-          style={{ left: useTransform(smoothMouseX, (v) => `${v * 100}%`) }}
-          className="absolute top-0 bottom-0 w-[2px] z-30 -translate-x-1/2 pointer-events-none"
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent opacity-90" />
-          {/* Handle knob */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center shadow-xl
-            bg-white/80 border-2 border-[#3b5bdb]/30 backdrop-blur-md
-            dark:bg-white/10 dark:border-white/30">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M5 8H1M11 8H15M5 5L1 8L5 11M11 5L15 8L11 11"
-                stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"
-                className="text-[#1c3faa] dark:text-white"/>
-            </svg>
-          </div>
-        </motion.div>
-
-        {/* Corner labels */}
-        <div className="absolute top-4 left-4 z-40 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider backdrop-blur-md border
-          bg-white/80 border-blue-200/80 text-[#1c3faa]
-          dark:bg-[#060d24]/70 dark:border-white/10 dark:text-white/80
-          transition-colors shadow-sm">
-          UI / UX
-        </div>
-        <div className="absolute top-4 right-4 z-40 px-3 py-1.5 rounded-full text-[11px] font-mono font-bold tracking-wider backdrop-blur-md border
-          bg-white/80 border-violet-200/80 text-[#7048e8]
-          dark:bg-[#060d24]/70 dark:border-white/10 dark:text-[#c4b5fd]
-          transition-colors shadow-sm">
-          API
-        </div>
-
-        {/* Bottom gradient text overlay */}
-        <div className="absolute bottom-0 left-0 right-0 z-30 p-5 flex justify-between items-end pointer-events-none"
-          style={{ background: "linear-gradient(to top, rgba(0,0,20,0.55) 0%, transparent 100%)" }}>
-          <span className="text-white/80 text-[11px] font-semibold tracking-widest uppercase">Frontend</span>
-          <span className="text-white/80 text-[11px] font-semibold tracking-widest uppercase font-mono">Backend</span>
-        </div>
-      </motion.div>
-
-      {/* Mobile hint */}
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.1 }}
-        className="absolute bottom-8 left-0 right-0 z-40 text-center md:hidden pointer-events-none"
-      >
-        <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-medium backdrop-blur-md border
-          bg-white/70 border-blue-200/60 text-[#1c3faa]
-          dark:bg-white/5 dark:border-white/10 dark:text-white/60
-          transition-colors">
-          ← Drag to reveal →
-        </span>
-      </motion.p>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6 }}
-        className="absolute bottom-8 right-8 hidden md:flex flex-col items-center gap-2 z-20"
-      >
-        <span className="text-[9px] uppercase tracking-[0.28em] [writing-mode:vertical-lr]
-          text-[#1c3faa]/40 dark:text-white/25 transition-colors">
-          Scroll
-        </span>
-        <motion.div
-          animate={{ scaleY: [0.5, 1, 0.5] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="w-[1px] h-10 origin-top rounded-full
-            bg-gradient-to-b from-[#1c3faa]/50 dark:from-white/30 to-transparent"
-        />
-      </motion.div>
-
-      {/* Name badge — center top */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.7 }}
-        className="absolute top-8 left-1/2 -translate-x-1/2 z-30 px-5 py-2 rounded-full text-xs font-bold tracking-[0.2em] uppercase backdrop-blur-md border
-          bg-white/80 border-blue-200/70 text-[#1c3faa]
-          dark:bg-white/5 dark:border-[#3b5bdb]/30 dark:text-[#a5b4fc]
-          transition-colors shadow-sm hidden md:block"
-      >
-        Full-Stack Developer
-      </motion.div>
     </section>
   );
 }

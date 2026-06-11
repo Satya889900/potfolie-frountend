@@ -46,62 +46,58 @@ export default function Navbar() {
   return (
     <header
       className={`
-        sticky top-0 z-50 w-full
+        sticky top-0 z-50 w-full h-[88px] flex items-center bg-[#f4f6f0] dark:bg-[#0f1714]
         transition-all duration-300 ease-out
-        ${
-          scrolled
-            ? "bg-white/80 dark:bg-blue-950/70 backdrop-blur-xl shadow-[0_1px_3px_rgba(28,63,170,.10)] border-b border-blue-100/60 dark:border-blue-800/50"
-            : "bg-transparent"
-        }
+        ${scrolled ? "shadow-md" : ""}
       `}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 md:px-10 xl:px-16">
         {/* ── logo ─────────────────────────────────── */}
         <Link
           href="/"
-          className="group relative text-2xl font-extrabold tracking-tight select-none"
+          className="group relative text-2xl font-black tracking-tight select-none"
         >
-          <span className="bg-gradient-to-r from-[#1c3faa] via-[#3b5bdb] to-[#5c7cfa] bg-clip-text text-transparent">
+          <span className="text-[#b8905b]">
             Satya
           </span>
-          <span className="text-blue-900 dark:text-white">.</span>
-          <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-gradient-to-r from-[#1c3faa] to-[#5c7cfa] transition-all duration-300 group-hover:w-full" />
+          <span className="text-[#1b3b36] dark:text-[#e8efe2]">.</span>
         </Link>
 
         {/* ── desktop nav ──────────────────────────── */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden md:flex items-center justify-center bg-white/60 dark:bg-white/5 px-2 py-1.5 rounded-full border border-[#1b3b36]/5 dark:border-[#b8905b]/10 backdrop-blur-md">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
               (link.href !== "/" && pathname.startsWith(link.href));
 
             return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`
-                  relative rounded-lg px-3 py-1.5 text-sm font-medium
-                  transition-colors duration-200
-                  ${
-                    isActive
-                      ? "text-[#1c3faa] dark:text-blue-400"
-                      : "text-blue-800 hover:text-[#1c3faa] dark:text-blue-200 dark:hover:text-white"
-                  }
-                `}
-              >
-                {link.name}
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 -z-10 rounded-lg bg-[#1c3faa]/10 dark:bg-blue-500/15"
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 28,
-                    }}
-                  />
-                )}
-              </Link>
+               <div key={link.name} className="relative">
+                 <Link
+                   href={link.href}
+                   className={`
+                     relative z-10 rounded-full px-4 py-1.5 text-[11px] font-extrabold tracking-widest uppercase
+                     transition-colors duration-200 block
+                     ${
+                       isActive
+                         ? "text-white"
+                         : "text-[#1b3b36] hover:text-[#b8905b] dark:text-[#e8efe2] dark:hover:text-[#c4a572]"
+                     }
+                   `}
+                 >
+                   {link.name}
+                 </Link>
+                 {isActive && (
+                   <motion.div
+                     layoutId="nav-pill"
+                     className="absolute inset-0 z-0 rounded-full bg-[#1b3b36] dark:bg-[#b8905b]/30 shadow-sm"
+                     transition={{
+                       type: "spring",
+                       stiffness: 400,
+                       damping: 28,
+                     }}
+                   />
+                 )}
+               </div>
             );
           })}
         </nav>
@@ -113,7 +109,7 @@ export default function Navbar() {
           {/* hamburger */}
           <button
             onClick={() => setOpen(true)}
-            className="relative rounded-lg p-2 text-blue-900 transition-colors hover:bg-blue-50 dark:text-blue-200 dark:hover:bg-white/10 md:hidden"
+            className="relative rounded-lg p-2 transition-colors md:hidden text-[#1b3b36] dark:text-[#e8efe2]"
             aria-label="Open menu"
           >
             <Menu size={22} />
@@ -132,7 +128,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed inset-0 z-40 bg-[#1c3faa]/30 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-[#1b3b36]/40 backdrop-blur-sm md:hidden"
               onClick={() => setOpen(false)}
             />
 
@@ -144,18 +140,18 @@ export default function Navbar() {
               animate="visible"
               exit="exit"
               className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col
-                         bg-white/95 dark:bg-blue-950/90 backdrop-blur-2xl
-                         border-l border-blue-100 dark:border-blue-900/50
-                         shadow-2xl shadow-blue-200/30 md:hidden`}
+                         bg-[#f4f6f0]/95 backdrop-blur-2xl
+                         border-l border-[#1b3b36]/10
+                         shadow-2xl shadow-[#1b3b36]/20 md:hidden`}
             >
               {/* close button */}
               <div className="flex items-center justify-between px-5 py-4">
-                <span className="text-lg font-bold bg-gradient-to-r from-[#1c3faa] to-[#5c7cfa] bg-clip-text text-transparent">
+                <span className="text-lg font-bold text-[#b8905b]">
                   Menu
                 </span>
                 <button
                   onClick={() => setOpen(false)}
-                  className="rounded-lg p-2 text-blue-600 transition-colors hover:bg-blue-50 dark:text-blue-300 dark:hover:bg-white/10"
+                  className="rounded-lg p-2 text-[#1b3b36] transition-colors hover:bg-[#1b3b36]/10"
                   aria-label="Close menu"
                 >
                   <X size={20} />
@@ -167,7 +163,7 @@ export default function Navbar() {
                 variants={stagger}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-2"
+                className="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-4"
               >
                 {navLinks.map((link) => {
                   const isActive =
@@ -180,12 +176,12 @@ export default function Navbar() {
                         href={link.href}
                         onClick={() => setOpen(false)}
                         className={`
-                          flex items-center rounded-xl px-4 py-3 text-[15px] font-medium
-                          transition-colors duration-200
+                          flex items-center rounded-xl px-5 py-3.5 text-[15px] font-bold
+                          transition-all duration-200
                           ${
                             isActive
-                              ? "bg-[#1c3faa]/10 text-[#1c3faa] dark:text-blue-400"
-                              : "text-blue-800 hover:bg-blue-50 dark:text-blue-200 dark:hover:bg-white/5"
+                              ? "bg-[#1b3b36] text-[#e8efe2] shadow-md"
+                              : "text-[#2a3b34] hover:bg-[#1b3b36]/5"
                           }
                         `}
                       >
@@ -196,9 +192,9 @@ export default function Navbar() {
                 })}
               </motion.nav>
 
-              {/* bottom gradient */}
-              <div className="h-px bg-gradient-to-r from-transparent via-[#1c3faa]/30 to-transparent mx-4" />
-              <div className="px-5 py-4 text-xs text-blue-500">
+              {/* bottom footer */}
+              <div className="h-px bg-[#1b3b36]/10 mx-4" />
+              <div className="px-5 py-5 text-xs font-medium text-[#2a3b34]/50">
                 © {new Date().getFullYear()} Satya Prakash
               </div>
             </motion.div>
