@@ -11,7 +11,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-[#f4f6f0] dark:bg-[#0f1714] text-[#2a3b34] dark:text-gray-200 transition-colors duration-500">
+      <body className="bg-[#f4f6f0] dark:bg-[#0f1714] text-[#2a3b34] dark:text-gray-200 transition-colors duration-500 overflow-x-hidden">
         <ThemeProvider>
           <Navbar />
 

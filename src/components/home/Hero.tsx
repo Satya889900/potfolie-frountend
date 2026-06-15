@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { cloudinaryLoader } from "../../lib/cloudinary";
 import { Zap, Layout, Accessibility, Server, Shield, Cloud, Play, ChevronRight, BarChart2 } from "lucide-react";
 
 /* ── Data ─────────────────────────────────────────────────── */
@@ -140,7 +141,7 @@ export default function Hero() {
             </span>
 
             {/* Heading */}
-            <h1 className="text-[4.2rem] xl:text-[5.5rem] font-black leading-[0.9] tracking-tight mb-4 text-[#1b3b36]">
+            <h1 className="text-[3.2rem] sm:text-[4.2rem] xl:text-[5.5rem] font-black leading-[0.9] tracking-tight mb-4 text-[#1b3b36]">
               frontend.
             </h1>
 
@@ -211,7 +212,7 @@ export default function Hero() {
               }}
             >
               {/* Image */}
-              <Image src="/hero_split.png" alt="Frontend and Backend Developer" fill className="object-cover" priority />
+              <Image loader={cloudinaryLoader} src="/hero_split.png" alt="Frontend and Backend Developer" fill className="object-cover" priority />
               
               {/* Bottom labels inside image */}
               <div className="absolute bottom-4 inset-x-0 flex justify-between px-10 text-white text-[10px] font-extrabold tracking-[0.2em] uppercase">
@@ -241,7 +242,7 @@ export default function Hero() {
             </span>
 
             {/* Heading */}
-            <h1 className="text-[4.2rem] xl:text-[5.5rem] font-bold leading-[0.9] tracking-tight mb-4 font-serif text-[#d2bfa6] drop-shadow-[0_0_15px_rgba(210,191,166,0.3)]">
+            <h1 className="text-[3.2rem] sm:text-[4.2rem] xl:text-[5.5rem] font-bold leading-[0.9] tracking-tight mb-4 font-serif text-[#d2bfa6] drop-shadow-[0_0_15px_rgba(210,191,166,0.3)]">
               &lt;backend/&gt;
             </h1>
 

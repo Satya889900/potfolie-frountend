@@ -163,36 +163,44 @@ export default function TechMarquee() {
         </span>
       </motion.div>
 
-      {/* Tech Icons Grid */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.1 }}
-        className="max-w-5xl mx-auto px-6"
-      >
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10">
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={tech.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.5 }}
-              className="group flex flex-col items-center gap-2 cursor-default"
+      {/* Tech Icons Marquee */}
+      <div className="w-full relative flex overflow-hidden mask-image-gradient">
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 35s linear infinite;
+          }
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
+          .mask-image-gradient {
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          }
+        `}} />
+        
+        <div className="flex w-[200%] animate-marquee">
+          {/* Double the technologies array to create a seamless loop */}
+          {[...technologies, ...technologies, ...technologies, ...technologies].map((tech, index) => (
+            <div
+              key={`${tech.name}-${index}`}
+              className="flex-shrink-0 flex items-center justify-center mx-4 sm:mx-6"
             >
-              <div className="flex flex-col items-center justify-center gap-2 w-24 h-24 rounded-2xl bg-white shadow-[0_8px_20px_rgba(27,59,54,0.08)] border border-[#1b3b36]/5 group-hover:shadow-[0_12px_25px_rgba(27,59,54,0.12)] group-hover:-translate-y-1 transition-all duration-300">
-                <div className="flex items-center justify-center h-10">
-                  {tech.icon}
+              <div className="group flex flex-col items-center gap-2 cursor-pointer w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white shadow-[0_8px_20px_rgba(27,59,54,0.08)] border border-[#1b3b36]/5 hover:shadow-[0_12px_25px_rgba(27,59,54,0.12)] hover:-translate-y-1 transition-all duration-300">
+                <div className="flex items-center justify-center h-10 mt-3 sm:mt-4">
+                  <div className="scale-75 sm:scale-100">{tech.icon}</div>
                 </div>
-                <span className="text-[10px] font-extrabold text-[#1b3b36]/60 group-hover:text-[#1b3b36] transition-colors duration-200">
+                <span className="text-[9px] sm:text-[10px] font-extrabold text-[#1b3b36]/60 group-hover:text-[#1b3b36] transition-colors duration-200">
                   {tech.name}
                 </span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

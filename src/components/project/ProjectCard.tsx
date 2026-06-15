@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, MouseEvent } from "react";
 import { ArrowRight } from "lucide-react";
+import { cloudinaryLoader } from "../../lib/cloudinary";
 import type { Project } from "../../../types/Project";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -44,6 +45,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div className="relative z-10 w-full sm:w-[220px] lg:w-[260px] shrink-0 aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-[#1c3327] p-3">
           <div className="relative w-full h-full rounded-xl overflow-hidden">
             <Image
+              loader={cloudinaryLoader}
               src={project.image}
               alt={project.title}
               fill

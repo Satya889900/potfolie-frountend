@@ -11,7 +11,7 @@ export const projects = [
     ],
     githubUrl: "#",
     liveUrl: "#",
-    image: "/projects/student.png",
+    image: "/Projectimg.png",
   },
   {
     id: 2,
@@ -24,6 +24,6 @@ export const projects = [
     ],
     githubUrl: "#",
     liveUrl: "#",
-    image: "/projects/employee.png",
+    image: "/projectimge.png",
   },
 ];

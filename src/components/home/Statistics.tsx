@@ -154,19 +154,10 @@ export default function Statistics() {
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         
         {/* Left Network Design */}
-        <div className="absolute left-[-200px] top-[-5%] w-[800px] h-[800px] mix-blend-multiply opacity-[0.35] dark:opacity-70 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(184,144,91,0.25),transparent_55%)]" />
+        <div className="absolute left-[-200px] top-[-5%] w-[800px] h-[800px] opacity-[0.15] dark:opacity-30 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(184,144,91,0.15),transparent_55%)]" />
           <svg className="absolute inset-0 w-full h-full text-[#b8905b]" viewBox="0 0 200 200">
-            <defs>
-              <filter id="glowLeft" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="1.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <g filter="url(#glowLeft)" fill="currentColor">
+            <g fill="currentColor">
               {/* Dense Web Lines */}
               <path d="M140 100 L110 50 L70 40 L40 80 L50 130 L90 160 L140 150 Z" fill="none" stroke="currentColor" strokeWidth="0.4" strokeOpacity="0.4" />
               <path d="M140 100 L100 80 L70 40 M100 80 L40 80 M100 80 L50 130 M100 80 L90 160 M100 80 L140 150" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.6" />
@@ -198,19 +189,10 @@ export default function Statistics() {
         </div>
 
         {/* Right Network Design */}
-        <div className="absolute right-[-200px] top-[10%] w-[800px] h-[800px] mix-blend-multiply opacity-[0.35] dark:opacity-70 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(184,144,91,0.25),transparent_55%)]" />
+        <div className="absolute right-[-200px] top-[10%] w-[800px] h-[800px] opacity-[0.15] dark:opacity-30 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(184,144,91,0.15),transparent_55%)]" />
           <svg className="absolute inset-0 w-full h-full text-[#b8905b]" viewBox="0 0 200 200">
-            <defs>
-              <filter id="glowRight" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="1.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <g filter="url(#glowRight)" fill="currentColor">
+            <g fill="currentColor">
               {/* Dense Web Lines */}
               <path d="M60 100 L90 50 L130 40 L160 80 L150 130 L110 160 L60 150 Z" fill="none" stroke="currentColor" strokeWidth="0.4" strokeOpacity="0.4" />
               <path d="M60 100 L100 80 L130 40 M100 80 L160 80 M100 80 L150 130 M100 80 L110 160 M100 80 L60 150" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.6" />

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { cloudinaryLoader } from "../../lib/cloudinary";
 
 export default function CTA() {
   return (
@@ -114,7 +115,7 @@ export default function CTA() {
                   whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="absolute right-0 md:right-4 lg:right-6 top-1/2 -translate-y-1/2 w-[280px] h-[260px] md:w-[380px] md:h-[350px] lg:w-[460px] lg:h-[420px] z-20 pointer-events-none"
+                  className="relative md:absolute right-0 md:right-4 lg:right-6 top-0 md:top-1/2 transform-none md:-translate-y-1/2 mt-8 md:mt-0 self-center w-[240px] h-[220px] sm:w-[280px] sm:h-[260px] md:w-[380px] md:h-[350px] lg:w-[460px] lg:h-[420px] z-20 pointer-events-none"
                 >
                   <div 
                     className="relative w-full h-full"
@@ -124,6 +125,7 @@ export default function CTA() {
                     }}
                   >
                     <Image
+                      loader={cloudinaryLoader}
                       src="/cta_3d_isometric.png"
                       alt="Web Development Illustration"
                       fill
