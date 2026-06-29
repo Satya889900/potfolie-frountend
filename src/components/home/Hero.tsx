@@ -126,7 +126,7 @@ export default function Hero() {
             onMouseEnter={() => setHoverSide("left")}
             onMouseLeave={() => setHoverSide(null)}
             className={`flex flex-col w-full lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left transition-all duration-700 ${
-              hoverSide === "right" ? "opacity-15 blur-[5px] scale-85" : "opacity-100 blur-0 scale-100"
+              hoverSide === "right" ? "opacity-15 scale-85" : "opacity-100 scale-100"
             }`}
           >
             {/* Top badge */}
@@ -215,7 +215,7 @@ export default function Hero() {
               }}
             >
               {/* Image */}
-              <Image loader={cloudinaryLoader} src="/hero_split.png" alt="Frontend and Backend Developer" fill className="object-cover" priority />
+              <Image loader={cloudinaryLoader} src="/hero_split.png" alt="Frontend and Backend Developer" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="object-cover" priority />
               
               {/* Bottom labels inside image */}
               <div className="absolute bottom-4 inset-x-0 flex justify-between px-10 text-white text-[10px] font-extrabold tracking-[0.2em] uppercase">
@@ -235,7 +235,7 @@ export default function Hero() {
             onMouseEnter={() => setHoverSide("right")}
             onMouseLeave={() => setHoverSide(null)}
             className={`flex flex-col w-full lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left mt-12 lg:mt-0 transition-all duration-700 ${
-              hoverSide === "left" ? "opacity-15 blur-[5px] scale-85" : "opacity-100 blur-0 scale-100"
+              hoverSide === "left" ? "opacity-15 scale-85" : "opacity-100 scale-100"
             }`}
           >
             {/* Label */}

@@ -22,31 +22,29 @@ export default function AboutInfo() {
   ];
 
   return (
-    <section className="relative w-full py-16 px-6 md:px-10 xl:px-16 mt-8 overflow-hidden">
+    <section className="relative w-full py-16 px-6 md:px-10 xl:px-16 mt-8 overflow-hidden bg-[#f4f6f0] dark:bg-[#0f1714]">
+      {/* Dot grid */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(184,144,91,0.1) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* ── Badge & Heading (Aligned to the left of the container) ── */}
+        {/* ── Badge & Heading — static for instant paint ── */}
         <div className="mb-8 lg:mb-12 ml-2 lg:ml-8">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-2 mb-2"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]"></span>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
             <span className="text-[11px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
               ABOUT ME
             </span>
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]"
-          >
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
             ABOUT SATYA.
-          </motion.h2>
+          </h2>
         </div>
 
         {/* ── Two-column layout ── */}
@@ -80,8 +78,9 @@ export default function AboutInfo() {
               {/* Floating UI Window - Top Left */}
               <motion.div 
                 animate={{ y: [0, -8, 0] }} 
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-6 lg:-left-16 top-[15%] w-24 h-16 bg-[#f4f6f0] border border-[#c4a572]/20 rounded-lg shadow-lg p-1.5 z-20 opacity-90 backdrop-blur-sm"
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                style={{ willChange: "transform" }}
+                className="absolute -left-6 lg:-left-16 top-[15%] w-24 h-16 bg-[#f4f6f0] border border-[#c4a572]/20 rounded-lg shadow-lg p-1.5 z-20 opacity-90"
               >
                 <div className="flex gap-1 mb-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
@@ -96,8 +95,9 @@ export default function AboutInfo() {
               {/* Floating UI Window - Bottom Right */}
               <motion.div 
                 animate={{ y: [0, 10, 0] }} 
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -right-4 lg:-right-12 bottom-[15%] w-28 h-20 bg-[#f4f6f0] border border-[#c4a572]/20 rounded-lg shadow-lg p-1.5 z-20 opacity-90 backdrop-blur-sm"
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                style={{ willChange: "transform" }}
+                className="absolute -right-4 lg:-right-12 bottom-[15%] w-28 h-20 bg-[#f4f6f0] border border-[#c4a572]/20 rounded-lg shadow-lg p-1.5 z-20 opacity-90"
               >
                 <div className="flex gap-1 mb-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
@@ -119,16 +119,17 @@ export default function AboutInfo() {
                 {/* Outer Tablet Frame */}
                 <div className="relative rounded-[2rem] p-3.5 bg-gradient-to-b from-[#ffffff] to-[#e5e5e5] shadow-[0_20px_50px_rgba(27,59,54,0.15)] border border-white/60">
                   {/* Inner screen bezel */}
-                  <div className="relative aspect-[3/4] rounded-[1.2rem] overflow-hidden bg-[#2a3b34] shadow-inner">
-                    <Image
-                      loader={cloudinaryLoader}
-                      src="/imge4.jpg"
-                      alt="Satya Prakash"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
+                 <div className="relative aspect-[3/4] rounded-[1.2rem] overflow-hidden bg-[#2a3b34] shadow-inner">
+  <Image
+    src="https://i.ibb.co/zqj1JWj/my.jpg"
+    alt="Satya Prakash"
+    fill
+    sizes="(max-width: 768px) 100vw, 400px"
+    className="object-cover"
+    priority
+    unoptimized
+  />
+</div>
                 </div>
               </motion.div>
             </div>

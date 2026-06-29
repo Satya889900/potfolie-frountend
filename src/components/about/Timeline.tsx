@@ -64,28 +64,17 @@ export default function Timeline() {
   return (
     <section className="relative w-full py-20 px-6 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* ── Badge & Heading ── */}
+        {/* ── Badge & Heading — static ── */}
         <div className="mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-2 mb-2"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]"></span>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
             <span className="text-[11px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
               MY CORE VALUES
             </span>
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]"
-          >
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
             MY CORE VALUES.
-          </motion.h2>
+          </h2>
         </div>
 
         {/* ── Value cards grid ── */}
@@ -101,6 +90,7 @@ export default function Timeline() {
               key={idx}
               variants={itemVariants}
               whileHover={{ y: -6 }}
+              style={{ willChange: "transform" }}
               className="group p-7 rounded-2xl border transition-all duration-300 backdrop-blur-sm
                 bg-white/60 border-[#c4a572]/15 hover:bg-white hover:shadow-xl hover:shadow-[#c4a572]/10
                 dark:bg-white/[0.04] dark:border-white/[0.07] dark:hover:bg-white/[0.08] dark:hover:shadow-[#c4a572]/10"
