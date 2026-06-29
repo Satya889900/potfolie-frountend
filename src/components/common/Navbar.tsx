@@ -140,9 +140,9 @@ export default function Navbar() {
               animate="visible"
               exit="exit"
               className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col
-                         bg-[#f4f6f0]/95 backdrop-blur-2xl
-                         border-l border-[#1b3b36]/10
-                         shadow-2xl shadow-[#1b3b36]/20 md:hidden`}
+                         bg-[#f4f6f0]/95 dark:bg-[#0f1714]/95 backdrop-blur-2xl
+                         border-l border-[#1b3b36]/10 dark:border-white/10
+                         shadow-2xl shadow-[#1b3b36]/20 dark:shadow-black/40 md:hidden`}
             >
               {/* close button */}
               <div className="flex items-center justify-between px-5 py-4">
@@ -151,7 +151,7 @@ export default function Navbar() {
                 </span>
                 <button
                   onClick={() => setOpen(false)}
-                  className="rounded-lg p-2 text-[#1b3b36] transition-colors hover:bg-[#1b3b36]/10"
+                  className="rounded-lg p-2 text-[#1b3b36] dark:text-[#e8efe2] transition-colors hover:bg-[#1b3b36]/10 dark:hover:bg-white/10"
                   aria-label="Close menu"
                 >
                   <X size={20} />
@@ -180,8 +180,8 @@ export default function Navbar() {
                           transition-all duration-200
                           ${
                             isActive
-                              ? "bg-[#1b3b36] text-[#e8efe2] shadow-md"
-                              : "text-[#2a3b34] hover:bg-[#1b3b36]/5"
+                              ? "bg-[#1b3b36] dark:bg-[#b8905b]/30 text-[#e8efe2] dark:text-white shadow-md"
+                              : "text-[#2a3b34] dark:text-[#e8efe2] hover:bg-[#1b3b36]/5 dark:hover:bg-white/5"
                           }
                         `}
                       >
@@ -193,8 +193,8 @@ export default function Navbar() {
               </motion.nav>
 
               {/* bottom footer */}
-              <div className="h-px bg-[#1b3b36]/10 mx-4" />
-              <div className="px-5 py-5 text-xs font-medium text-[#2a3b34]/50">
+              <div className="h-px bg-[#1b3b36]/10 dark:bg-white/10 mx-4" />
+              <div className="px-5 py-5 text-xs font-medium text-[#2a3b34]/50 dark:text-[#e8efe2]/50">
                 © {new Date().getFullYear()} Satya Prakash
               </div>
             </motion.div>

@@ -1,9 +1,5 @@
 import SkillCategory from "../../components/skills/SkillCategory";
 
 export default function SkillsPage() {
-  return (
-    <main>
-      <SkillCategory />
-    </main>
-  );
+  return <SkillCategory />;
 }

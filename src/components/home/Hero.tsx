@@ -193,15 +193,18 @@ export default function Hero() {
           >
             {/* Tabs floating above */}
             <div className="flex justify-center gap-3 mb-4 w-full relative z-30">
-              <div className="px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm bg-[#f4f6f0]/80 border-[#1b3b36]/10 text-[#1b3b36]">
-                UF/UX
-              </div>
-              <div className="px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm bg-[#1b3b36]/80 border-[#b8905b]/20 text-[#e8efe2]">
-                Vue
-              </div>
-              <div className="px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm bg-[#1b3b36]/80 border-[#b8905b]/20 text-[#e8efe2]">
-                API
-              </div>
+              {centerTabs.map((tab, index) => (
+                <div
+                  key={tab}
+                  className={`px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm ${
+                    index === 0
+                      ? "bg-[#f4f6f0]/80 border-[#1b3b36]/10 text-[#1b3b36]"
+                      : "bg-[#1b3b36]/80 border-[#b8905b]/20 text-[#e8efe2]"
+                  }`}
+                >
+                  {tab}
+                </div>
+              ))}
             </div>
 
             {/* Image container with floating tabs */}
