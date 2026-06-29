@@ -1,99 +1,161 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import SkillCard from "./SkillCard";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.04 },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-};
-
-const sectionHeadVariants: Variants = {
-  hidden: { opacity: 0, x: -8 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
-};
+import { motion } from "framer-motion";
 
 export default function SkillCategory() {
-  const frontend = [
-    "HTML", "CSS", "JavaScript", "TypeScript",
-    "React", "Next.js", "Tailwind CSS",
-  ];
-  const backend = ["Java", "Spring Boot", "Node.js", "Express.js"];
-  const database = ["MongoDB", "MySQL", "PostgreSQL"];
-
   const sections = [
-    { label: "Frontend", skills: frontend },
-    { label: "Backend", skills: backend },
-    { label: "Database", skills: database },
+    {
+      label: "Frontend",
+      suffix: "(as in watermarked_img_16254415848574187010.png)",
+      skills: [
+        { name: "HTML. [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+        { name: "CSS. [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+        { name: "JavaScript (ES6+) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+        { name: "React [cite: request]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+        { name: "Next.js (cite: 2) [cite: 2]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+        { name: "Tailwind CSS [cite: 2]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      ],
+    },
+    {
+      label: "Backend & APIs",
+      suffix: "(as in watermarked_img_16254415848574187010.png)",
+      skills: [
+        { name: "Node.js. [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+        { name: "Express [cite: 1]", icon: "https://cdn.simpleicons.org/express/000000" },
+        { name: "Spring Boot [cite: 2]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+        { name: "Java [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+        { name: "MySQL [cite: request]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { name: "PostgreSQL [cite: request]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { name: "REST APIs [cite: 1]", icon: "https://cdn.simpleicons.org/postman/FF6C37" }, // Using postman icon as a proxy for REST APIs
+      ],
+    },
+    {
+      label: "DevOps & Deployment",
+      suffix: "(as in watermarked_img_16254415848574187010.png)",
+      skills: [
+        { name: "AWS EC2 (Added as requested).", icon: "https://cdn.simpleicons.org/amazonec2/FF9900" },
+        { name: "Docker [cite: 18]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+        { name: "CI/CD Pipelines [cite: 8, 18]", icon: "https://cdn.simpleicons.org/githubactions/2088FF" }, // proxy for CI/CD
+        { name: "Git & GitHub [cite: 18]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+        { name: "Vercel [cite: 18]", icon: "https://cdn.simpleicons.org/vercel/000000" },
+        { name: "Render [cite: 18]", icon: "https://cdn.simpleicons.org/render/46E3B7" },
+      ],
+    },
+    {
+      label: "Database",
+      suffix: "",
+      skills: [
+        { name: "MongoDB (Aggregation & Indexition & Indexing) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+      ],
+    },
+    {
+      label: "Communications & Auth",
+      suffix: "",
+      skills: [
+        { name: "JWT & RBAC (Authentication) [cite: 1]", icon: "https://cdn.simpleicons.org/jsonwebtokens/000000" },
+        { name: "Socket.io (Real-Time) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg" },
+        { name: "Firebase FCM (Push Notifications) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" },
+        { name: "Brevo (Email/SMS Automation) [cite: 1]", icon: "https://cdn.simpleicons.org/brevo/009286" },
+        { name: "Twilio (SMS/Voice/OTP) [cite: 1]", icon: "https://cdn.simpleicons.org/twilio/F22F46" },
+        { name: "WhatsApp Business API (Meta) [cite: 1]", icon: "https://cdn.simpleicons.org/whatsapp/25D366" },
+        { name: "Razorpay Gateway (Payments) [cite: 1]", icon: "https://cdn.simpleicons.org/razorpay/02042B" },
+      ],
+    },
   ];
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden flex flex-col bg-[#f4f6f0] dark:bg-[#0f1714]">
-      {/* Dot grid — static, no repaint */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(184,144,91,0.13) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
+    <main className="relative min-h-screen w-full overflow-x-hidden flex flex-col bg-[#fbfbf9] dark:bg-[#0f1714] font-sans transition-colors duration-300">
+      {/* Network Background SVG */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <svg className="absolute left-0 top-0 h-full w-full opacity-60 dark:opacity-20" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Left side web */}
+          <path d="M-100 100 L250 250 L-50 450 Z" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.8" />
+          <path d="M250 250 L450 100 L150 -50" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.6" />
+          <path d="M-50 450 L150 700 L350 400 L250 250" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.7" />
+          <path d="M350 400 L600 600 L150 700" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.5" />
+          <path d="M600 600 L400 900 L0 1000" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.6" />
+          <path d="M-100 800 L200 950 L100 1100" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.7" />
+          <path d="M150 700 L200 950" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.6" />
 
-      <div className="relative z-10 flex-1 flex flex-col py-16 px-6 md:px-10 xl:px-16">
-        <div className="max-w-6xl mx-auto w-full">
+          {/* Right side web */}
+          <path d="M1500 150 L1250 300 L1600 450 Z" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.8" />
+          <path d="M1250 300 L1050 50 L1500 -50" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.6" />
+          <path d="M1600 450 L1350 700 L1150 400 L1250 300" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.7" />
+          <path d="M1150 400 L900 650 L1350 700" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.5" />
+          <path d="M900 650 L1100 950 L1500 1050" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.6" />
+          <path d="M1500 850 L1200 1000 L1400 1150" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.7" />
+          <path d="M1350 700 L1200 1000" stroke="#c4a572" strokeWidth="1" strokeOpacity="0.6" />
+          
+          {/* Nodes */}
+          <circle cx="250" cy="250" r="2.5" fill="#c4a572" />
+          <circle cx="450" cy="100" r="2.5" fill="#c4a572" />
+          <circle cx="-50" cy="450" r="2.5" fill="#c4a572" />
+          <circle cx="150" cy="700" r="2.5" fill="#c4a572" />
+          <circle cx="350" cy="400" r="2.5" fill="#c4a572" />
+          <circle cx="600" cy="600" r="2.5" fill="#c4a572" />
+          <circle cx="400" cy="900" r="2.5" fill="#c4a572" />
+          <circle cx="200" cy="950" r="2.5" fill="#c4a572" />
+          <circle cx="1250" cy="300" r="2.5" fill="#c4a572" />
+          <circle cx="1050" cy="50" r="2.5" fill="#c4a572" />
+          <circle cx="1150" cy="400" r="2.5" fill="#c4a572" />
+          <circle cx="1350" cy="700" r="2.5" fill="#c4a572" />
+          <circle cx="900" cy="650" r="2.5" fill="#c4a572" />
+          <circle cx="1100" cy="950" r="2.5" fill="#c4a572" />
+          <circle cx="1200" cy="1000" r="2.5" fill="#c4a572" />
+        </svg>
+      </div>
 
-          {/* Header */}
-          <div className="mb-12 ml-2">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
-              <span className="text-[11px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
-                MY TECH STACK
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
-              PROFESSIONAL SKILLS.
-            </h1>
+      <div className="relative z-10 flex-1 flex flex-col pt-12 pb-24 px-6 md:px-16 max-w-7xl mx-auto w-full">
+        {/* Header */}
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-xl text-[#a07c4b]">✦</span>
+            <span className="text-sm font-semibold tracking-widest text-[#a07c4b] uppercase">
+              MY TECH STACK
+            </span>
           </div>
+          <h1 className="text-[2.75rem] font-bold text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight">
+            PROFESSIONAL SKILLS.
+          </h1>
+        </div>
 
-          {sections.map(({ label, skills }) => (
-            <div key={label} className="mb-14 ml-2">
-              <motion.h2
-                variants={sectionHeadVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.5 }}
-                className="text-2xl font-black text-[#1b3b36] dark:text-[#e8efe2] mb-6 flex items-center gap-3"
-              >
-                <span className="w-4 h-[2px] bg-[#c4a572]" />
-                {label}
-              </motion.h2>
-
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.1 }}
-                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
-              >
-                {skills.map((skill) => (
-                  <motion.div key={skill} variants={itemVariants}>
-                    <SkillCard skill={skill} />
+        {/* Skill Sections */}
+        <div className="flex flex-col gap-8">
+          {sections.map((section, idx) => (
+            <div key={idx} className="flex flex-col">
+              <h2 className="text-[1.35rem] font-semibold text-[#1a3831] dark:text-[#a8c89c] mb-5 flex items-baseline flex-wrap gap-2">
+                <span className="text-[#305a4a] dark:text-[#a8c89c]">— {section.label}.</span>
+                {section.suffix && (
+                  <span className="text-sm text-gray-500 dark:text-gray-400 font-normal tracking-tight">
+                    {section.suffix}
+                  </span>
+                )}
+              </h2>
+              
+              <div className="flex flex-wrap gap-3">
+                {section.skills.map((skill, sIdx) => (
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    key={sIdx}
+                    className="flex items-center gap-3 bg-white dark:bg-white/[0.05] px-4 py-2.5 rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none"
+                  >
+                    <div className="w-6 h-6 flex items-center justify-center shrink-0">
+                      {/* Using regular img for ease, can be optimized later */}
+                      <img src={skill.icon} alt={skill.name} className="max-w-full max-h-full object-contain" />
+                    </div>
+                    <span className="text-[15px] font-medium text-[#1b3b36] dark:text-[#e8efe2] whitespace-nowrap">
+                      {skill.name}
+                    </span>
                   </motion.div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           ))}
-
         </div>
       </div>
+
+      {/* Footer Strip */}
+    
     </main>
   );
 }
