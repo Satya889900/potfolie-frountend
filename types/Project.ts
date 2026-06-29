@@ -3,8 +3,10 @@ export interface Project {
   title: string;
   slug: string;
   description: string;
+  detailedDescription?: string;
 
   technologies: string[];
+  features?: string[];
 
   githubUrl: string;
   liveUrl: string;
