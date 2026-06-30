@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, MouseEvent } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Code2, ExternalLink } from "lucide-react";
 import { cloudinaryLoader } from "../../lib/cloudinary";
 import type { Project } from "../../../types/Project";
 
@@ -77,7 +77,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="flex gap-3 mt-4">
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-3 mt-4">
+          {/* Primary: View Details → project detail page */}
           <Link
             href={`/projects/${project.slug}`}
             className="group/btn inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#243d2c] text-[#e8efe2] text-[12px] font-bold hover:bg-[#1c3327] transition-colors shadow-sm"
@@ -85,6 +87,32 @@ export default function ProjectCard({ project }: { project: Project }) {
             View Details
             <ArrowRight size={12} className="group-hover/btn:translate-x-0.5 transition-transform" />
           </Link>
+
+          {/* GitHub link (only if set) */}
+          {project.githubUrl && project.githubUrl !== "#" && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[#243d2c]/20 dark:border-[#e8efe2]/20 text-[#243d2c] dark:text-[#e8efe2] text-[12px] font-bold hover:bg-[#243d2c]/10 transition-colors"
+            >
+              <Code2 size={12} />
+              Code
+            </a>
+          )}
+
+          {/* Live preview link (only if set) */}
+          {project.liveUrl && project.liveUrl !== "#" && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[#b8905b]/30 text-[#b8905b] text-[12px] font-bold hover:bg-[#b8905b]/10 transition-colors"
+            >
+              <ExternalLink size={12} />
+              Live
+            </a>
+          )}
         </div>
       </div>
     </div>
