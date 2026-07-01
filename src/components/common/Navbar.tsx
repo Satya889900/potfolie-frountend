@@ -70,12 +70,32 @@ export default function Navbar() {
               pathname === link.href ||
               (link.href !== "/" && pathname.startsWith(link.href));
 
+            // 🚧 Coming Soon links — rendered as disabled, non-navigable items
+            if (link.comingSoon) {
+              return (
+                <div key={link.name} className="relative group">
+                  <span
+                    className="relative z-10 rounded-full px-4 py-2 text-sm font-extrabold tracking-widest uppercase
+                      text-[#1b3b36]/35 dark:text-[#e8efe2]/30 cursor-not-allowed select-none flex items-center gap-1.5"
+                    title={`${link.name} — Coming Soon`}
+                  >
+                    {link.name}
+                    {/* "Soon" badge */}
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[8px] font-black tracking-wider uppercase
+                      bg-[#c4a572]/20 text-[#a07c4b] dark:bg-[#c4a572]/15 dark:text-[#c4a572] leading-none">
+                      Soon
+                    </span>
+                  </span>
+                </div>
+              );
+            }
+
             return (
                <div key={link.name} className="relative">
                  <Link
                    href={link.href}
                    className={`
-                     relative z-10 rounded-full px-4 py-1.5 text-[11px] font-extrabold tracking-widest uppercase
+                     relative z-10 rounded-full px-4 py-2 text-sm font-extrabold tracking-widest uppercase
                      transition-colors duration-200 block
                      ${
                        isActive
@@ -169,6 +189,25 @@ export default function Navbar() {
                   const isActive =
                     pathname === link.href ||
                     (link.href !== "/" && pathname.startsWith(link.href));
+
+                  // 🚧 Coming Soon links — disabled in mobile drawer too
+                  if (link.comingSoon) {
+                    return (
+                      <motion.div key={link.name} variants={linkItem}>
+                        <span
+                          className="flex items-center justify-between rounded-xl px-5 py-3.5 text-[15px] font-bold
+                            text-[#2a3b34]/35 dark:text-[#e8efe2]/30 cursor-not-allowed select-none"
+                        >
+                          {link.name}
+                          {/* "Coming Soon" pill */}
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-black tracking-wider uppercase
+                            bg-[#c4a572]/20 text-[#a07c4b] dark:bg-[#c4a572]/15 dark:text-[#c4a572] leading-none">
+                            Coming Soon
+                          </span>
+                        </span>
+                      </motion.div>
+                    );
+                  }
 
                   return (
                     <motion.div key={link.name} variants={linkItem}>

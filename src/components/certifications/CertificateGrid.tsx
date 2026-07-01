@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,

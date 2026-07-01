@@ -111,7 +111,7 @@ export default function ContactForm() {
               </div>
               <div className="flex flex-col text-white font-medium">
                 <span className="text-[19px] lg:text-[21px] break-all">satyaprakash121122@gmail.com</span>
-                <span className="text-base lg:text-[17px] opacity-80 mt-1">(as requested from the resume) [cite: 1]</span>
+                <span className="text-base lg:text-[17px] opacity-80 mt-1">(as requested from the resume) </span>
               </div>
             </motion.div>
 
@@ -127,7 +127,7 @@ export default function ContactForm() {
               </div>
               <div className="flex flex-col text-white font-medium">
                 <span className="text-[19px] lg:text-[21px]">Bangalore, India <span className="text-base lg:text-[17px] font-normal opacity-80">(as requested from</span></span>
-                <span className="text-base lg:text-[17px] opacity-80">the resume) [cite: 1]</span>
+                <span className="text-base lg:text-[17px] opacity-80">the resume)  </span>
               </div>
             </motion.div>
 
@@ -143,7 +143,7 @@ export default function ContactForm() {
             >
               <div style={{ background: "linear-gradient(90deg, #d8b87c 0%, #b8905b 100%)" }} 
                    className="py-4 lg:py-5 px-8 rounded-2xl flex items-center gap-6 shadow-md text-[#2a3b34] font-bold">
-                <span className="text-lg lg:text-[20px]">[cite: 1]</span>
+                <span className="text-lg lg:text-[20px]"> </span>
                 <span className="text-[19px] lg:text-[22px]">LinkedIn Profile</span>
               </div>
             </motion.a>
@@ -160,7 +160,7 @@ export default function ContactForm() {
             >
               <div style={{ background: "linear-gradient(90deg, #d8b87c 0%, #b8905b 100%)" }} 
                    className="py-4 lg:py-5 px-8 rounded-2xl flex items-center gap-6 shadow-md text-[#2a3b34] font-bold">
-                <span className="text-lg lg:text-[20px]">[cite: 1]</span>
+                <span className="text-lg lg:text-[20px]"> </span>
                 <span className="text-[19px] lg:text-[22px]">GitHub Profile</span>
               </div>
             </motion.a>

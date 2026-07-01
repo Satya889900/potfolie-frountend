@@ -18,21 +18,23 @@ export const navLinks = [
   {
     name: "Blog",
     href: "/blog",
+    comingSoon: true, // 🚧 Coming Soon — page is under construction
   },
   {
     name: "Contact",
     href: "/contact",
   },
   {
-  name: "Experience",
-  href: "/experience",
-},
-{
-  name: "Certificates",
-  href: "/certifications",
-},
-{
-  name: "Resume",
-  href: "/resume",
-},
+    name: "Experience",
+    href: "/experience",
+  },
+  {
+    name: "Certificates",
+    href: "/certifications",
+    comingSoon: true, // 🚧 Coming Soon — page is under construction
+  },
+  {
+    name: "Resume",
+    href: "/resume",
+  },
 ];

@@ -22,16 +22,7 @@ export default function AboutInfo() {
   ];
 
   return (
-    <section className="relative w-full py-16 px-6 md:px-10 xl:px-16 mt-8 overflow-hidden bg-[#f4f6f0] dark:bg-[#0f1714]">
-      {/* Dot grid */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(184,144,91,0.1) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
+    <section className="relative w-full py-16 px-6 md:px-10 xl:px-16 mt-8 overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* ── Badge & Heading — static for instant paint ── */}

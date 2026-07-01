@@ -8,25 +8,25 @@ export default function SkillCategory() {
       label: "Frontend",
       suffix: "(as in watermarked_img_16254415848574187010.png)",
       skills: [
-        { name: "HTML. [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
-        { name: "CSS. [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
-        { name: "JavaScript (ES6+) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
-        { name: "React [cite: request]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
-        { name: "Next.js (cite: 2) [cite: 2]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
-        { name: "Tailwind CSS [cite: 2]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+        { name: "HTML.  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+        { name: "CSS.  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+        { name: "JavaScript (ES6+)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+        { name: "React ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+        { name: "Next.js ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+        { name: "Tailwind CSS ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
       ],
     },
     {
       label: "Backend & APIs",
       suffix: "(as in watermarked_img_16254415848574187010.png)",
       skills: [
-        { name: "Node.js. [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
-        { name: "Express [cite: 1]", icon: "https://cdn.simpleicons.org/express/000000" },
-        { name: "Spring Boot [cite: 2]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
-        { name: "Java [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
-        { name: "MySQL [cite: request]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
-        { name: "PostgreSQL [cite: request]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
-        { name: "REST APIs [cite: 1]", icon: "https://cdn.simpleicons.org/postman/FF6C37" }, // Using postman icon as a proxy for REST APIs
+        { name: "Node.js.  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+        { name: "Express  ", icon: "https://cdn.simpleicons.org/express/000000" },
+        { name: "Spring Boot ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+        { name: "Java  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+        { name: "MySQL ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { name: "PostgreSQL ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { name: "REST APIs  ", icon: "https://cdn.simpleicons.org/postman/FF6C37" }, // Using postman icon as a proxy for REST APIs
       ],
     },
     {
@@ -34,31 +34,31 @@ export default function SkillCategory() {
       suffix: "(as in watermarked_img_16254415848574187010.png)",
       skills: [
         { name: "AWS EC2 (Added as requested).", icon: "https://cdn.simpleicons.org/amazonec2/FF9900" },
-        { name: "Docker [cite: 18]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-        { name: "CI/CD Pipelines [cite: 8, 18]", icon: "https://cdn.simpleicons.org/githubactions/2088FF" }, // proxy for CI/CD
-        { name: "Git & GitHub [cite: 18]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-        { name: "Vercel [cite: 18]", icon: "https://cdn.simpleicons.org/vercel/000000" },
-        { name: "Render [cite: 18]", icon: "https://cdn.simpleicons.org/render/46E3B7" },
+        { name: "Docker ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+        { name: "CI/CD Pipelines ", icon: "https://cdn.simpleicons.org/githubactions/2088FF" }, // proxy for CI/CD
+        { name: "Git & GitHub ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+        { name: "Vercel ", icon: "https://cdn.simpleicons.org/vercel/000000" },
+        { name: "Render ", icon: "https://cdn.simpleicons.org/render/46E3B7" },
       ],
     },
     {
       label: "Database",
       suffix: "",
       skills: [
-        { name: "MongoDB (Aggregation & Indexition & Indexing) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+        { name: "MongoDB (Aggregation & Indexition & Indexing)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
       ],
     },
     {
       label: "Communications & Auth",
       suffix: "",
       skills: [
-        { name: "JWT & RBAC (Authentication) [cite: 1]", icon: "https://cdn.simpleicons.org/jsonwebtokens/000000" },
-        { name: "Socket.io (Real-Time) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg" },
-        { name: "Firebase FCM (Push Notifications) [cite: 1]", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" },
-        { name: "Brevo (Email/SMS Automation) [cite: 1]", icon: "https://cdn.simpleicons.org/brevo/009286" },
-        { name: "Twilio (SMS/Voice/OTP) [cite: 1]", icon: "https://cdn.simpleicons.org/twilio/F22F46" },
-        { name: "WhatsApp Business API (Meta) [cite: 1]", icon: "https://cdn.simpleicons.org/whatsapp/25D366" },
-        { name: "Razorpay Gateway (Payments) [cite: 1]", icon: "https://cdn.simpleicons.org/razorpay/02042B" },
+        { name: "JWT & RBAC (Authentication)  ", icon: "https://cdn.simpleicons.org/jsonwebtokens/000000" },
+        { name: "Socket.io (Real-Time)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg" },
+        { name: "Firebase FCM (Push Notifications)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" },
+        { name: "Brevo (Email/SMS Automation)  ", icon: "https://cdn.simpleicons.org/brevo/009286" },
+        { name: "Twilio (SMS/Voice/OTP)  ", icon: "https://cdn.simpleicons.org/twilio/F22F46" },
+        { name: "WhatsApp Business API (Meta)  ", icon: "https://cdn.simpleicons.org/whatsapp/25D366" },
+        { name: "Razorpay Gateway (Payments)  ", icon: "https://cdn.simpleicons.org/razorpay/02042B" },
       ],
     },
   ];
@@ -137,13 +137,13 @@ export default function SkillCategory() {
                   <motion.div
                     whileHover={{ scale: 1.02, y: -2 }}
                     key={sIdx}
-                    className="flex items-center gap-3 bg-white dark:bg-white/[0.05] px-4 py-2.5 rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none"
+                    className="flex items-center gap-3 bg-white dark:bg-white/[0.05] px-5 py-3 rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none"
                   >
-                    <div className="w-6 h-6 flex items-center justify-center shrink-0">
+                    <div className="w-7 h-7 flex items-center justify-center shrink-0">
                       {/* Using regular img for ease, can be optimized later */}
                       <img src={skill.icon} alt={skill.name} className="max-w-full max-h-full object-contain" />
                     </div>
-                    <span className="text-[15px] font-medium text-[#1b3b36] dark:text-[#e8efe2] whitespace-nowrap">
+                    <span className="text-lg font-semibold text-[#1b3b36] dark:text-[#e8efe2] whitespace-nowrap">
                       {skill.name}
                     </span>
                   </motion.div>

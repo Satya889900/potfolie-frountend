@@ -15,7 +15,7 @@ const statsData = [
     ),
   },
   {
-    number: "10+",
+    number: "3+",
     label: "SUCCESSFUL DEPLOYMENTS.",
     sub: "On time, within budget",
     icon: (

@@ -1,15 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import { useTheme } from "next-themes";
 import ProjectCard from "./ProjectCard";
 import { Project } from "@/types/Project";
+import PageBackground from "../common/PageBackground";
 
 interface ProjectGridProps {
   projects: Project[];
 }
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
-  const containerVariants = {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -17,25 +22,22 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden flex flex-col bg-[#eef2ff] dark:bg-[#07071a] transition-colors duration-500">
-      {/* ── LIGHT MODE background ── */}
-      <div aria-hidden className="dark:hidden pointer-events-none absolute inset-0 bg-[#f4f6f0]" />
-
-      {/* ── DARK MODE background ── */}
-      <div aria-hidden className="hidden dark:block pointer-events-none absolute inset-0 bg-[#0f1714]" />
-
-      {/* Dot grid */}
-      <div aria-hidden className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(184,144,91,0.15) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }} />
+    <main
+      className="relative min-h-screen w-full overflow-hidden flex flex-col"
+      style={{
+        background: isDark
+          ? "radial-gradient(ellipse at 50% 0%, #1a2e24 0%, #0c1610 40%, #080e0a 100%)"
+          : "#f4f6f0",
+      }}
+    >
+      {/* ── Shared resume-style background (network canvas + stars) ── */}
+      <PageBackground />
 
       <div className="relative z-10 flex-1 flex flex-col min-h-screen py-16 px-6 md:px-10 xl:px-16">
         <div className="max-w-6xl mx-auto w-full">
