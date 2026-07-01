@@ -26,15 +26,32 @@ export default function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
-    const response = await sendContactForm(data);
-    if (response.success) {
-      toast.success(response.message);
-      reset();
-    } else {
-      toast.error(response.message || "Failed to send message.");
-    }
-  };
+ const onSubmit = async (data: ContactFormData) => {
+  try {
+    // We send the JSON data but use 'text/plain' as the Content-Type.
+    // This allows the browser to skip the strict CORS preflight (OPTIONS) request,
+    // while still delivering the JSON string to your Google Apps Script backend
+    // so it can use JSON.parse(e.postData.contents).
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxEZNc3NnWSI5Btzpwh9XZHrQBkwgDBSkyKyCzIBWDdrj-e1aBP6Zohi_igq94d7ZSB/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    // Because 'no-cors' makes the response opaque, we can't parse response.json().
+    // If fetch didn't throw a network error, the request was successfully sent.
+    toast.success("Message sent successfully!");
+    reset();
+  } catch (error) {
+    toast.error("Something went wrong. Please try again.");
+  }
+};
 
   return (
     <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden flex flex-col bg-[#fbfbf9] dark:bg-[#0f1714] font-sans transition-colors duration-300">

@@ -90,11 +90,11 @@ export default function ExperienceTimeline() {
           <div className="mb-16 ml-4 md:ml-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
-              <span className="text-[11px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
+              <span className="text-[13px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
                 MY CAREER PATH
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
+            <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
               WORK EXPERIENCE.
             </h1>
           </div>
@@ -125,19 +125,19 @@ export default function ExperienceTimeline() {
 
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 relative z-10">
                     <div>
-                      <h2 className="text-2xl md:text-3xl font-black text-[#1b3b36] dark:text-[#e8efe2] leading-tight mb-2">
+                      <h2 className="text-3xl md:text-4xl font-black text-[#1b3b36] dark:text-[#e8efe2] leading-tight mb-2">
                         {item.role}
                       </h2>
                       <div className="flex flex-wrap items-center gap-2 text-[#1b3b36]/80 dark:text-[#e8efe2]/80">
-                        <h3 className="text-sm font-bold text-[#b8905b] uppercase tracking-wider">
+                        <h3 className="text-base font-bold text-[#b8905b] uppercase tracking-wider">
                           {item.company}
                         </h3>
-                        <span className="hidden sm:inline text-xs opacity-50">|</span>
-                        <span className="text-sm font-semibold">{item.location}</span>
+                        <span className="hidden sm:inline text-sm opacity-50">|</span>
+                        <span className="text-base font-semibold">{item.location}</span>
                       </div>
                     </div>
                     <span
-                      className="inline-block px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase w-fit whitespace-nowrap
+                      className="inline-block px-5 py-2.5 rounded-xl text-sm font-black tracking-wider uppercase w-fit whitespace-nowrap
                       bg-[#b8905b]/10 text-[#b8905b] border border-[#b8905b]/20 dark:bg-[#b8905b]/15 dark:text-[#c4a572]"
                     >
                       {item.duration}
@@ -148,9 +148,9 @@ export default function ExperienceTimeline() {
                     {item.description.map((point, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="mt-1 flex-shrink-0">
-                          <CheckCircle2 size={16} className="text-[#b8905b]" />
+                          <CheckCircle2 size={18} className="text-[#b8905b]" />
                         </div>
-                        <span className="text-[14px] leading-relaxed text-[#1b3b36]/75 dark:text-[#e8efe2]/80 font-semibold">
+                        <span className="text-base leading-relaxed text-[#1b3b36]/75 dark:text-[#e8efe2]/80 font-semibold">
                           {point}
                         </span>
                       </li>

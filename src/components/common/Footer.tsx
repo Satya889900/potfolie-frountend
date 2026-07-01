@@ -164,7 +164,7 @@ export default function Footer() {
               <span className="text-[#b8905b] dark:text-[#c4a572]">Satya</span>
               <span className="text-white dark:text-[#e8efe2]">.</span>
             </Link>
-            <p className="mt-1 text-sm leading-relaxed text-[#e8efe2]/60">
+            <p className="mt-1 text-base leading-relaxed text-[#e8efe2]/60">
               Full stack developer crafting custom art experiences with open source and creative design.
             </p>
             <div className="mt-3 w-9 h-[1.5px] rounded-full bg-[#b8905b]" />
@@ -172,7 +172,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-1 md:pl-8">
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -180,7 +180,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#e8efe2]/60 transition-colors duration-200 hover:text-[#c4a572]"
+                    className="text-base text-[#e8efe2]/60 transition-colors duration-200 hover:text-[#c4a572]"
                   >
                     {link.name}
                   </Link>
@@ -191,7 +191,7 @@ export default function Footer() {
 
           {/* Explore */}
           <div className="md:col-span-1 md:pl-4">
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
               Explore
             </h4>
             <ul className="space-y-2">
@@ -199,7 +199,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#e8efe2]/60 transition-colors duration-200 hover:text-[#c4a572]"
+                    className="text-base text-[#e8efe2]/60 transition-colors duration-200 hover:text-[#c4a572]"
                   >
                     {link.name}
                   </Link>
@@ -210,13 +210,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-1">
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
               Let&apos;s Contact
             </h4>
-            <p className="text-sm leading-relaxed text-[#e8efe2]/60 mb-4">
+            <p className="text-base leading-relaxed text-[#e8efe2]/60 mb-4">
               Open to freelance opportunities and collaborations.
             </p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {socialIcons.map((s) => (
                 <a
                   key={s.name}
@@ -224,9 +224,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="flex h-[33px] w-[33px] items-center justify-center rounded-[7px] bg-[#a7b9af] text-[#12241b] transition-all duration-200 hover:scale-110 hover:bg-[#c6d6ce]"
+                  className="flex h-[40px] w-[40px] items-center justify-center rounded-[8px] bg-[#a7b9af] text-[#12241b] transition-all duration-200 hover:scale-110 hover:bg-[#c6d6ce]"
                 >
-                  <s.icon size={15} />
+                  <s.icon size={18} />
                 </a>
               ))}
             </div>
@@ -234,7 +234,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="flex flex-col items-center justify-between gap-2 py-4 pb-5 text-xs text-[#e8efe2]/40 sm:flex-row flex-wrap">
+        <div className="flex flex-col items-center justify-between gap-2 py-4 pb-5 text-sm text-[#e8efe2]/40 sm:flex-row flex-wrap">
           <p>&copy; {year} Satya Prakash. All rights reserved.</p>
           <div className="flex items-center gap-3.5">
             <span className="hover:text-[#c4a572] cursor-pointer transition-colors">Terms of Service</span>
@@ -242,7 +242,7 @@ export default function Footer() {
             <span className="hover:text-[#c4a572] cursor-pointer transition-colors">Terms of Service</span>
           </div>
           <p className="flex items-center gap-1">
-            Built with <Heart size={12} className="text-[#b8905b] dark:text-[#c4a572] animate-pulse" /> using React.js
+            Built with <Heart size={14} className="text-[#b8905b] dark:text-[#c4a572] animate-pulse" /> using React.js
           </p>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function SkillCategory() {
       label: "DevOps & Deployment",
       suffix: "(as in watermarked_img_16254415848574187010.png)",
       skills: [
-        { name: "AWS EC2 (Added as requested).", icon: "https://cdn.simpleicons.org/amazonec2/FF9900" },
+        { name: "AWS EC2 (Added as requested).", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
         { name: "Docker ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
         { name: "CI/CD Pipelines ", icon: "https://cdn.simpleicons.org/githubactions/2088FF" }, // proxy for CI/CD
         { name: "Git & GitHub ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
@@ -56,7 +56,7 @@ export default function SkillCategory() {
         { name: "Socket.io (Real-Time)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg" },
         { name: "Firebase FCM (Push Notifications)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" },
         { name: "Brevo (Email/SMS Automation)  ", icon: "https://cdn.simpleicons.org/brevo/009286" },
-        { name: "Twilio (SMS/Voice/OTP)  ", icon: "https://cdn.simpleicons.org/twilio/F22F46" },
+        { name: "Twilio (SMS/Voice/OTP)  ", icon: "https://www.vectorlogo.zone/logos/twilio/twilio-icon.svg" },
         { name: "WhatsApp Business API (Meta)  ", icon: "https://cdn.simpleicons.org/whatsapp/25D366" },
         { name: "Razorpay Gateway (Payments)  ", icon: "https://cdn.simpleicons.org/razorpay/02042B" },
       ],
@@ -137,9 +137,9 @@ export default function SkillCategory() {
                   <motion.div
                     whileHover={{ scale: 1.02, y: -2 }}
                     key={sIdx}
-                    className="flex items-center gap-3 bg-white dark:bg-white/[0.05] px-5 py-3 rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none"
+                    className="flex items-center gap-4 bg-white dark:bg-white/[0.05] px-6 py-4 rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none"
                   >
-                    <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 flex items-center justify-center shrink-0">
                       {/* Using regular img for ease, can be optimized later */}
                       <img src={skill.icon} alt={skill.name} className="max-w-full max-h-full object-contain" />
                     </div>
