@@ -105,16 +105,16 @@ export default function SkillCategory() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex-1 flex flex-col pt-12 pb-24 px-6 md:px-16 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 flex-1 flex flex-col pt-8 sm:pt-12 pb-16 sm:pb-24 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-8 sm:mb-10">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xl text-[#a07c4b]">✦</span>
-            <span className="text-sm font-semibold tracking-widest text-[#a07c4b] uppercase">
+            <span className="text-lg sm:text-xl text-[#a07c4b]">✦</span>
+            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#a07c4b] uppercase">
               MY TECH STACK
             </span>
           </div>
-          <h1 className="text-[2.75rem] font-bold text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight leading-tight">
             PROFESSIONAL SKILLS.
           </h1>
         </div>
@@ -123,27 +123,27 @@ export default function SkillCategory() {
         <div className="flex flex-col gap-8">
           {sections.map((section, idx) => (
             <div key={idx} className="flex flex-col">
-              <h2 className="text-[1.35rem] font-semibold text-[#1a3831] dark:text-[#a8c89c] mb-5 flex items-baseline flex-wrap gap-2">
+              <h2 className="text-xl sm:text-[1.35rem] font-semibold text-[#1a3831] dark:text-[#a8c89c] mb-4 sm:mb-5 flex items-baseline flex-wrap gap-2">
                 <span className="text-[#305a4a] dark:text-[#a8c89c]">— {section.label}.</span>
                 {section.suffix && (
-                  <span className="text-sm text-gray-500 dark:text-gray-400 font-normal tracking-tight">
+                  <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal tracking-tight">
                     {section.suffix}
                   </span>
                 )}
               </h2>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {section.skills.map((skill, sIdx) => (
                   <motion.div
                     whileHover={{ scale: 1.02, y: -2 }}
                     key={sIdx}
-                    className="flex items-center gap-4 bg-white dark:bg-white/[0.05] px-6 py-4 rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none"
+                    className="flex items-center gap-3 sm:gap-4 bg-white dark:bg-white/[0.05] px-4 sm:px-6 py-3 sm:py-4 rounded-3xl sm:rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none max-w-full"
                   >
-                    <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shrink-0">
                       {/* Using regular img for ease, can be optimized later */}
                       <img src={skill.icon} alt={skill.name} className="max-w-full max-h-full object-contain" />
                     </div>
-                    <span className="text-lg font-semibold text-[#1b3b36] dark:text-[#e8efe2] whitespace-nowrap">
+                    <span className="text-sm sm:text-lg font-semibold text-[#1b3b36] dark:text-[#e8efe2] whitespace-normal sm:whitespace-nowrap leading-tight sm:leading-normal flex-1">
                       {skill.name}
                     </span>
                   </motion.div>

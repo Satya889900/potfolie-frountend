@@ -114,7 +114,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col w-full">
 
         {/* Three-column layout */}
-        <div className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 xl:px-20 pt-8 pb-12 w-full max-w-full 2xl:max-w-[1900px] mx-auto gap-8 lg:gap-4">
+        <div className="flex flex-row items-center justify-between px-2 sm:px-4 md:px-10 xl:px-20 pt-8 pb-12 w-full max-w-full 2xl:max-w-[1900px] mx-auto gap-2 md:gap-4">
 
           {/* ════════════════════════════════════
               LEFT — Frontend
@@ -125,58 +125,58 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             onMouseEnter={() => setHoverSide("left")}
             onMouseLeave={() => setHoverSide(null)}
-            className={`flex flex-col w-full lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left transition-all duration-700 ${
+            className={`flex flex-col w-[33%] lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left transition-all duration-700 ${
               hoverSide === "right" ? "opacity-15 scale-85" : "opacity-100 scale-100"
             }`}
           >
             {/* Top badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 w-fit bg-[#e8efe2] border-[#d2bfa6]/60 text-[#b8905b] text-[10px] font-extrabold tracking-[0.18em] uppercase shadow-[0_2px_10px_rgba(184,144,91,0.1)]">
-              <Zap size={11} fill="currentColor" className="text-[#b8905b]" /> FULL STACK DEVELOPER
+            <div className="inline-flex items-center gap-1 md:gap-2 px-1.5 md:px-4 py-1 md:py-1.5 rounded-full border mb-4 md:mb-8 w-fit bg-[#e8efe2] border-[#d2bfa6]/60 text-[#b8905b] text-[5px] sm:text-[6.5px] md:text-[10px] font-extrabold tracking-[0.1em] md:tracking-[0.18em] uppercase shadow-[0_2px_10px_rgba(184,144,91,0.1)]">
+              <Zap size={9} fill="currentColor" className="text-[#b8905b] hidden sm:block md:w-[11px] md:h-[11px]" /> FULL STACK
             </div>
 
             {/* Label */}
-            <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 text-[#a07c4b]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
+            <span className="flex items-center gap-1 md:gap-2 text-[5px] sm:text-[7px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-extrabold mb-2 md:mb-3 text-[#a07c4b]">
+              <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-[#a07c4b]" />
               VISUAL LAYER
             </span>
 
             {/* Heading */}
-            <h1 className="text-[3.2rem] sm:text-[4.2rem] xl:text-[5.5rem] font-black leading-[0.9] tracking-tight mb-4 text-[#1b3b36]">
+            <h1 className="text-[1.3rem] sm:text-[2rem] md:text-[3.2rem] lg:text-[4.2rem] xl:text-[5.5rem] font-black leading-[0.9] tracking-tight mb-2 md:mb-4 text-[#1b3b36]">
               frontend.
             </h1>
 
             {/* Description */}
-            <p className="text-[14px] leading-relaxed mb-10 text-[#1b3b36]/80 font-medium max-w-[90%]">
+            <p className="text-[7px] sm:text-[9px] md:text-[14px] leading-relaxed mb-4 md:mb-10 text-[#1b3b36]/80 font-medium max-w-[95%] md:max-w-[90%]">
               Pixel-perfect interfaces with modern, accessibility, and depth.
             </p>
 
             {/* Feature lists */}
-            <div className="flex flex-col gap-5 mb-10 w-full pl-1">
+            <div className="flex flex-col gap-2 md:gap-5 mb-4 md:mb-10 w-full pl-0 md:pl-1">
               {frontendFeatures.map(({ icon, title, sub }) => (
-                <div key={title} className="flex items-center gap-4 group cursor-default">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-[#b8905b] text-white shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <div className="scale-[0.8]">{icon}</div>
+                <div key={title} className="flex items-center gap-1.5 md:gap-4 group cursor-default">
+                  <div className="w-4 h-4 sm:w-6 sm:h-6 md:w-9 md:h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-[#b8905b] text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="scale-[0.5] sm:scale-[0.6] md:scale-[0.8]">{icon}</div>
                   </div>
                   <div className="text-left">
-                    <p className="text-[15px] font-extrabold leading-tight text-[#1b3b36] mb-0.5">{title}</p>
-                    <p className="text-[12px] text-[#1b3b36]/70 font-medium">{sub}</p>
+                    <p className="text-[6.5px] sm:text-[9px] md:text-[15px] font-extrabold leading-tight text-[#1b3b36] mb-0.5">{title}</p>
+                    <p className="text-[5.5px] sm:text-[7px] md:text-[12px] text-[#1b3b36]/70 font-medium leading-none">{sub}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-5 w-full">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 w-full">
               <Link href="/projects"
-                className="flex items-center gap-2 px-6 py-3 rounded-full text-[13px] font-bold text-[#1b3b36] bg-gradient-to-r from-[#c4a572] to-[#a07c4b] shadow-[0_8px_20px_rgba(160,124,75,0.3)] hover:scale-105 transition-transform duration-300">
-                View Projects
-                <ChevronRight size={14} strokeWidth={3} />
+                className="flex items-center gap-1 md:gap-2 px-2 sm:px-4 md:px-6 py-1.5 md:py-3 rounded-full text-[6px] sm:text-[8px] md:text-[13px] font-bold text-[#1b3b36] bg-gradient-to-r from-[#c4a572] to-[#a07c4b] shadow-[0_4px_10px_rgba(160,124,75,0.3)] hover:scale-105 transition-transform duration-300 whitespace-nowrap">
+                Projects
+                <ChevronRight size={10} strokeWidth={3} className="md:w-3.5 md:h-3.5" />
               </Link>
               <Link href="/about"
-                className="group flex items-center gap-2 text-[13px] font-extrabold text-[#1b3b36] hover:text-[#a07c4b] transition-colors duration-300">
-                See My Work
-                <div className="w-7 h-7 rounded-full border-2 border-current flex items-center justify-center text-[#1b3b36] group-hover:text-[#a07c4b] transition-colors">
-                  <Play size={10} fill="currentColor" className="ml-0.5" />
+                className="group flex items-center gap-1 md:gap-2 text-[6px] sm:text-[8px] md:text-[13px] font-extrabold text-[#1b3b36] hover:text-[#a07c4b] transition-colors duration-300 whitespace-nowrap">
+                My Work
+                <div className="w-3 h-3 sm:w-5 sm:h-5 md:w-7 md:h-7 rounded-full border-2 border-current flex items-center justify-center text-[#1b3b36] group-hover:text-[#a07c4b] transition-colors">
+                  <Play size={6} fill="currentColor" className="ml-0.5 md:w-2.5 md:h-2.5" />
                 </div>
               </Link>
             </div>
@@ -189,14 +189,14 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="relative flex-shrink-0 z-20 w-full lg:w-[50%] xl:w-[50%] max-w-[900px] flex flex-col items-center"
+            className="relative flex-shrink-0 z-20 w-[34%] lg:w-[50%] xl:w-[50%] max-w-[900px] flex flex-col items-center"
           >
             {/* Tabs floating above */}
-            <div className="flex justify-center gap-3 mb-4 w-full relative z-30">
+            <div className="flex justify-center gap-1 md:gap-3 mb-2 md:mb-4 w-full relative z-30">
               {centerTabs.map((tab, index) => (
                 <div
                   key={tab}
-                  className={`px-5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm ${
+                  className={`px-1.5 md:px-5 py-0.5 md:py-1.5 rounded-full text-[5px] sm:text-[6px] md:text-[10px] font-extrabold tracking-wider uppercase backdrop-blur-md border shadow-sm ${
                     index === 0
                       ? "bg-[#f4f6f0]/80 border-[#1b3b36]/10 text-[#1b3b36]"
                       : "bg-[#1b3b36]/80 border-[#b8905b]/20 text-[#e8efe2]"
@@ -207,20 +207,19 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Image container with floating tabs */}
             <div 
-              className="relative w-full aspect-[4/3.5] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1b3b36]/30 border-4 border-[#1b3b36]/5 bg-[#1b3b36] transition-all duration-700 ease-in-out"
+              className="relative w-full aspect-[4/3.5] rounded-xl md:rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1b3b36]/30 border-2 md:border-4 border-[#1b3b36]/5 bg-[#1b3b36] transition-all duration-700 ease-in-out"
               style={{
                 transform: hoverSide === "left" ? "perspective(1200px) rotateY(10deg) scale(1.1)" : hoverSide === "right" ? "perspective(1200px) rotateY(-10deg) scale(1.1)" : "perspective(1200px) rotateY(0deg) scale(1)",
               }}
             >
               {/* Image */}
-              <Image loader={cloudinaryLoader} src="/hero_split.png" alt="Frontend and Backend Developer" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="object-cover" priority />
+              <Image loader={cloudinaryLoader} src="/hero_split.png" alt="Frontend and Backend Developer" fill sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 50vw" className="object-cover" priority />
               
               {/* Bottom labels inside image */}
-              <div className="absolute bottom-4 inset-x-0 flex justify-between px-10 text-white text-[10px] font-extrabold tracking-[0.2em] uppercase">
-                <span className="flex items-center gap-2"><Layout size={12}/> FRONTEND</span>
-                <span className="flex items-center gap-2"><Server size={12}/> BACKEND</span>
+              <div className="absolute bottom-1 md:bottom-4 inset-x-0 flex justify-between px-2 sm:px-4 md:px-10 text-white text-[4px] sm:text-[6px] md:text-[10px] font-extrabold tracking-[0.1em] md:tracking-[0.2em] uppercase">
+                <span className="flex items-center gap-0.5 md:gap-2"><Layout size={8} className="md:w-3 md:h-3"/> FRONT</span>
+                <span className="flex items-center gap-0.5 md:gap-2"><Server size={8} className="md:w-3 md:h-3"/> BACK</span>
               </div>
             </div>
           </motion.div>
@@ -234,46 +233,46 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             onMouseEnter={() => setHoverSide("right")}
             onMouseLeave={() => setHoverSide(null)}
-            className={`flex flex-col w-full lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left mt-12 lg:mt-0 transition-all duration-700 ${
+            className={`flex flex-col w-[33%] lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-end md:items-start text-right md:text-left mt-0 transition-all duration-700 ${
               hoverSide === "left" ? "opacity-15 scale-85" : "opacity-100 scale-100"
             }`}
           >
             {/* Label */}
-            <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 text-[#c4a572]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#c4a572]" />
+            <span className="flex items-center gap-1 md:gap-2 text-[5px] sm:text-[7px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-extrabold mb-2 md:mb-3 text-[#c4a572]">
+              <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-[#c4a572]" />
               LOGIC LAYER
             </span>
 
             {/* Heading */}
-            <h1 className="text-[3.2rem] sm:text-[4.2rem] xl:text-[5.5rem] font-bold leading-[0.9] tracking-tight mb-4 font-serif text-[#d2bfa6] drop-shadow-[0_0_15px_rgba(210,191,166,0.3)]">
-              &lt;backend/&gt;
+            <h1 className="text-[1.3rem] sm:text-[2rem] md:text-[3.2rem] lg:text-[4.2rem] xl:text-[5.5rem] font-bold leading-[0.9] tracking-tight mb-2 md:mb-4 font-serif text-[#d2bfa6] drop-shadow-[0_0_15px_rgba(210,191,166,0.3)]">
+              &lt;back/&gt;
             </h1>
 
             {/* Description */}
-            <p className="text-[14px] leading-relaxed mb-10 text-[#e8efe2]/80 font-medium max-w-[90%]">
+            <p className="text-[7px] sm:text-[9px] md:text-[14px] leading-relaxed mb-4 md:mb-10 text-[#e8efe2]/80 font-medium max-w-[95%] md:max-w-[90%]">
               Scalable, secure, and resilient server architectures built to last.
             </p>
 
             {/* Feature lists */}
-            <div className="flex flex-col gap-5 mb-10 w-full pl-1">
+            <div className="flex flex-col gap-2 md:gap-5 mb-4 md:mb-10 w-full pl-0 md:pl-1 items-end md:items-start text-right md:text-left">
               {backendFeatures.map(({ icon, title, sub }) => (
-                <div key={title} className="flex items-center gap-4 group cursor-default">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-[#c4a572] text-[#1b3b36] shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <div className="scale-[0.8]">{icon}</div>
+                <div key={title} className="flex items-center gap-1.5 md:gap-4 group cursor-default flex-row-reverse md:flex-row">
+                  <div className="w-4 h-4 sm:w-6 sm:h-6 md:w-9 md:h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-[#c4a572] text-[#1b3b36] shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="scale-[0.5] sm:scale-[0.6] md:scale-[0.8]">{icon}</div>
                   </div>
-                  <div className="text-left">
-                    <p className="text-[15px] font-extrabold leading-tight text-[#e8efe2] mb-0.5">{title}</p>
-                    <p className="text-[12px] text-[#e8efe2]/60 font-medium">{sub}</p>
+                  <div>
+                    <p className="text-[6.5px] sm:text-[9px] md:text-[15px] font-extrabold leading-tight text-[#e8efe2] mb-0.5">{title}</p>
+                    <p className="text-[5.5px] sm:text-[7px] md:text-[12px] text-[#e8efe2]/60 font-medium leading-none">{sub}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Tech pills */}
-            <div className="flex flex-wrap gap-2 justify-start">
+            <div className="flex flex-wrap gap-1 md:gap-2 justify-end md:justify-start">
               {backendTechs.map((t) => (
                 <span key={t}
-                  className="text-[11px] font-bold px-4 py-1.5 rounded-xl border tracking-wider bg-transparent border-[#c4a572]/30 text-[#e8efe2]/80">
+                  className="text-[5px] sm:text-[7px] md:text-[11px] font-bold px-1.5 md:px-4 py-0.5 md:py-1.5 rounded-md md:rounded-xl border tracking-wider bg-transparent border-[#c4a572]/30 text-[#e8efe2]/80">
                   {t}
                 </span>
               ))}
@@ -288,20 +287,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto w-full max-w-[1000px] px-6 relative z-30"
+          className="mx-auto w-full max-w-[1000px] px-2 md:px-6 relative z-30"
         >
-          <div className="rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(27,59,54,0.15)] overflow-hidden">
-            <div className="flex flex-col md:flex-row divide-y-2 md:divide-y-0 md:divide-x-2 divide-[#f4f6f0]">
+          <div className="rounded-xl md:rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(27,59,54,0.15)] overflow-hidden">
+            <div className="flex flex-row divide-x-2 divide-[#f4f6f0]">
               {stats.map(({ icon, value, label }) => (
-                <div key={label} className="flex-1 flex items-center justify-center gap-4 py-6 px-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[#1b3b36] text-[#b8905b] shadow-inner">
-                    {icon}
+                <div key={label} className="flex-1 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-4 py-3 md:py-6 px-1 md:px-4 text-center md:text-left">
+                  <div className="w-6 h-6 md:w-12 md:h-12 rounded-lg md:rounded-2xl flex items-center justify-center flex-shrink-0 bg-[#1b3b36] text-[#b8905b] shadow-inner">
+                    <div className="scale-[0.6] md:scale-100">{icon}</div>
                   </div>
-                  <div className="text-left">
-                    <p className="text-xl font-black text-[#1b3b36] leading-none mb-1">
+                  <div>
+                    <p className="text-[10px] md:text-xl font-black text-[#1b3b36] leading-none mb-0.5 md:mb-1">
                       {value}
                     </p>
-                    <p className="text-[11px] font-extrabold text-[#1b3b36]/60 leading-tight uppercase tracking-wider">
+                    <p className="text-[5px] md:text-[11px] font-extrabold text-[#1b3b36]/60 leading-tight uppercase tracking-wider hidden sm:block">
                       {label}
                     </p>
                   </div>

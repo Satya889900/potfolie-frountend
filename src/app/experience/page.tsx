@@ -90,11 +90,11 @@ export default function ExperienceTimeline() {
           <div className="mb-16 ml-4 md:ml-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
-              <span className="text-[13px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
+              <span className="text-[11px] sm:text-[13px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
                 MY CAREER PATH
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
               WORK EXPERIENCE.
             </h1>
           </div>
@@ -108,7 +108,7 @@ export default function ExperienceTimeline() {
             className="relative border-l-2 border-[#c4a572]/30 ml-4 md:ml-10 space-y-12 py-2"
           >
             {experiences.map((item, index) => (
-              <motion.div key={index} variants={itemVariants} className="relative pl-8 md:pl-12">
+              <motion.div key={index} variants={itemVariants} className="relative pl-6 sm:pl-8 md:pl-12">
                 {/* Timeline node */}
                 <div className="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-[#f4f6f0] dark:bg-[#0c1310] border-4 border-[#b8905b] shadow-[0_0_10px_rgba(184,144,91,0.5)] z-10" />
 
@@ -116,41 +116,41 @@ export default function ExperienceTimeline() {
                 <motion.div
                   whileHover={{ y: -3 }}
                   style={{ willChange: "transform" }}
-                  className="p-6 md:p-8 rounded-[2rem] border backdrop-blur-sm
+                  className="p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] border backdrop-blur-sm
                     bg-white/80 border-[#c4a572]/20 hover:bg-white hover:shadow-xl hover:shadow-[#c4a572]/10
                     dark:bg-white/[0.04] dark:border-white/[0.08] dark:hover:bg-white/[0.07]
                     transition-all duration-300 relative overflow-hidden group"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#b8905b]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 relative z-10">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-5 sm:mb-6 relative z-10">
                     <div>
-                      <h2 className="text-3xl md:text-4xl font-black text-[#1b3b36] dark:text-[#e8efe2] leading-tight mb-2">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1b3b36] dark:text-[#e8efe2] leading-tight mb-2">
                         {item.role}
                       </h2>
-                      <div className="flex flex-wrap items-center gap-2 text-[#1b3b36]/80 dark:text-[#e8efe2]/80">
-                        <h3 className="text-base font-bold text-[#b8905b] uppercase tracking-wider">
+                      <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[#1b3b36]/80 dark:text-[#e8efe2]/80">
+                        <h3 className="text-sm sm:text-base font-bold text-[#b8905b] uppercase tracking-wider">
                           {item.company}
                         </h3>
                         <span className="hidden sm:inline text-sm opacity-50">|</span>
-                        <span className="text-base font-semibold">{item.location}</span>
+                        <span className="text-sm sm:text-base font-semibold">{item.location}</span>
                       </div>
                     </div>
                     <span
-                      className="inline-block px-5 py-2.5 rounded-xl text-sm font-black tracking-wider uppercase w-fit whitespace-nowrap
+                      className="inline-block px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black tracking-wider uppercase w-fit whitespace-nowrap
                       bg-[#b8905b]/10 text-[#b8905b] border border-[#b8905b]/20 dark:bg-[#b8905b]/15 dark:text-[#c4a572]"
                     >
                       {item.duration}
                     </span>
                   </div>
 
-                  <ul className="space-y-3 relative z-10">
+                  <ul className="space-y-2 sm:space-y-3 relative z-10">
                     {item.description.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3">
+                      <li key={i} className="flex items-start gap-2 sm:gap-3">
                         <div className="mt-1 flex-shrink-0">
-                          <CheckCircle2 size={18} className="text-[#b8905b]" />
+                          <CheckCircle2 size={16} className="text-[#b8905b] sm:w-[18px] sm:h-[18px]" />
                         </div>
-                        <span className="text-base leading-relaxed text-[#1b3b36]/75 dark:text-[#e8efe2]/80 font-semibold">
+                        <span className="text-sm sm:text-base leading-relaxed text-[#1b3b36]/75 dark:text-[#e8efe2]/80 font-semibold">
                           {point}
                         </span>
                       </li>
