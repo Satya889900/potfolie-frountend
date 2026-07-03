@@ -114,7 +114,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col w-full">
 
         {/* Three-column layout */}
-        <div className="flex flex-row items-center justify-between px-2 sm:px-4 md:px-10 xl:px-20 pt-8 pb-12 w-full max-w-full 2xl:max-w-[1900px] mx-auto gap-2 md:gap-4">
+        <div className="flex flex-row items-center justify-between px-2 sm:px-4 md:px-10 xl:px-20 pt-8 pb-12 w-full max-w-full 2xl:max-w-[1900px] mx-auto md:gap-4">
 
           {/* ════════════════════════════════════
               LEFT — Frontend
@@ -125,7 +125,7 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             onMouseEnter={() => setHoverSide("left")}
             onMouseLeave={() => setHoverSide(null)}
-            className={`flex flex-col w-[33%] lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left transition-all duration-700 ${
+            className={`flex flex-col w-[29%] lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-start text-left transition-all duration-700 ${
               hoverSide === "right" ? "opacity-15 scale-85" : "opacity-100 scale-100"
             }`}
           >
@@ -189,7 +189,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="relative flex-shrink-0 z-20 w-[34%] lg:w-[50%] xl:w-[50%] max-w-[900px] flex flex-col items-center"
+            className="relative flex-shrink-0 z-20 w-[38%] lg:w-[46%] xl:w-[46%] max-w-[900px] flex flex-col items-center"
           >
             {/* Tabs floating above */}
             <div className="flex justify-center gap-1 md:gap-3 mb-2 md:mb-4 w-full relative z-30">
@@ -233,7 +233,7 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             onMouseEnter={() => setHoverSide("right")}
             onMouseLeave={() => setHoverSide(null)}
-            className={`flex flex-col w-[33%] lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-end md:items-start text-right md:text-left mt-0 transition-all duration-700 ${
+            className={`flex flex-col w-[29%] lg:w-[25%] xl:w-[25%] max-w-[500px] pointer-events-auto items-end md:items-start text-right md:text-left mt-0 transition-all duration-700 ${
               hoverSide === "left" ? "opacity-15 scale-85" : "opacity-100 scale-100"
             }`}
           >

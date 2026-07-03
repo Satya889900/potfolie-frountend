@@ -95,40 +95,40 @@ export default function ContactForm() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex-1 flex flex-col pt-12 pb-24 px-6 md:px-12 xl:px-16 max-w-7xl xl:max-w-[1400px] mx-auto w-full">
+      <div className="relative z-10 flex-1 flex flex-col pt-8 sm:pt-12 pb-16 sm:pb-24 px-4 sm:px-6 md:px-12 xl:px-16 max-w-7xl xl:max-w-[1400px] mx-auto w-full">
         {/* Header */}
-        <div className="mb-14 text-left">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-2xl text-[#a07c4b]">✦</span>
-            <span className="text-base font-semibold tracking-widest text-[#a07c4b] uppercase">
+        <div className="mb-10 sm:mb-14 text-left">
+          <div className="flex items-center gap-2 sm:gap-3 mb-2">
+            <span className="text-xl sm:text-2xl text-[#a07c4b]">✦</span>
+            <span className="text-sm sm:text-base font-semibold tracking-widest text-[#a07c4b] uppercase">
               GET IN TOUCH
             </span>
           </div>
-          <h1 className="text-5xl lg:text-[4.2rem] font-bold text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-[4.2rem] font-bold text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight">
             CONTACT ME.
           </h1>
-          <p className="mt-3 text-[1.15rem] lg:text-[1.3rem] text-black dark:text-[#e8efe2]/80 font-medium">
+          <p className="mt-2 sm:mt-3 text-[1rem] sm:text-[1.15rem] lg:text-[1.3rem] text-black dark:text-[#e8efe2]/80 font-medium">
             Have a question or want to work together? Drop me a message below.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 sm:gap-12 lg:gap-20 items-start">
           
           {/* Left Column - Contact Info Cards */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5 sm:gap-6">
             {/* Email Card */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-[#2a3b34] dark:bg-[#1a2823] p-8 lg:p-10 rounded-[1.5rem] shadow-lg flex flex-col gap-4"
+              className="bg-[#2a3b34] dark:bg-[#1a2823] p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-[1.5rem] shadow-lg flex flex-col gap-3 sm:gap-4"
             >
-              <div className="bg-[#b8905b] w-14 h-12 rounded-xl flex items-center justify-center text-[#2a3b34] mb-1">
-                <Mail size={26} />
+              <div className="bg-[#b8905b] w-12 sm:w-14 h-10 sm:h-12 rounded-xl flex items-center justify-center text-[#2a3b34] mb-1">
+                <Mail size={24} className="sm:w-[26px] sm:h-[26px]" />
               </div>
               <div className="flex flex-col text-white font-medium">
-                <span className="text-[19px] lg:text-[21px] break-all">satyaprakash121122@gmail.com</span>
-                <span className="text-base lg:text-[17px] opacity-80 mt-1">(as requested from the resume) </span>
+                <span className="text-[17px] sm:text-[19px] lg:text-[21px] break-all">satyaprakash121122@gmail.com</span>
+                <span className="text-sm sm:text-base lg:text-[17px] opacity-80 mt-1">(as requested from the resume) </span>
               </div>
             </motion.div>
 
@@ -137,14 +137,14 @@ export default function ContactForm() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-[#2a3b34] dark:bg-[#1a2823] p-8 lg:p-10 rounded-[1.5rem] shadow-lg flex flex-col gap-4"
+              className="bg-[#2a3b34] dark:bg-[#1a2823] p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-[1.5rem] shadow-lg flex flex-col gap-3 sm:gap-4"
             >
-              <div className="bg-[#b8905b] w-14 h-12 rounded-xl flex items-center justify-center text-[#2a3b34] mb-1">
-                <MapPin size={26} />
+              <div className="bg-[#b8905b] w-12 sm:w-14 h-10 sm:h-12 rounded-xl flex items-center justify-center text-[#2a3b34] mb-1">
+                <MapPin size={24} className="sm:w-[26px] sm:h-[26px]" />
               </div>
               <div className="flex flex-col text-white font-medium">
-                <span className="text-[19px] lg:text-[21px]">Bangalore, India <span className="text-base lg:text-[17px] font-normal opacity-80">(as requested from</span></span>
-                <span className="text-base lg:text-[17px] opacity-80">the resume)  </span>
+                <span className="text-[17px] sm:text-[19px] lg:text-[21px]">Bangalore, India <span className="text-sm sm:text-base lg:text-[17px] font-normal opacity-80">(as requested from</span></span>
+                <span className="text-sm sm:text-base lg:text-[17px] opacity-80">the resume)  </span>
               </div>
             </motion.div>
 
@@ -156,12 +156,12 @@ export default function ContactForm() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="w-full mt-3"
+              className="w-full mt-2 sm:mt-3"
             >
               <div style={{ background: "linear-gradient(90deg, #d8b87c 0%, #b8905b 100%)" }} 
-                   className="py-4 lg:py-5 px-8 rounded-2xl flex items-center gap-6 shadow-md text-[#2a3b34] font-bold">
-                <span className="text-lg lg:text-[20px]"> </span>
-                <span className="text-[19px] lg:text-[22px]">LinkedIn Profile</span>
+                   className="py-3 sm:py-4 lg:py-5 px-5 sm:px-8 rounded-2xl flex items-center gap-4 sm:gap-6 shadow-md text-[#2a3b34] font-bold">
+                <span className="text-base sm:text-lg lg:text-[20px]"> </span>
+                <span className="text-[17px] sm:text-[19px] lg:text-[22px]">LinkedIn Profile</span>
               </div>
             </motion.a>
 
@@ -176,9 +176,9 @@ export default function ContactForm() {
               className="w-full"
             >
               <div style={{ background: "linear-gradient(90deg, #d8b87c 0%, #b8905b 100%)" }} 
-                   className="py-4 lg:py-5 px-8 rounded-2xl flex items-center gap-6 shadow-md text-[#2a3b34] font-bold">
-                <span className="text-lg lg:text-[20px]"> </span>
-                <span className="text-[19px] lg:text-[22px]">GitHub Profile</span>
+                   className="py-3 sm:py-4 lg:py-5 px-5 sm:px-8 rounded-2xl flex items-center gap-4 sm:gap-6 shadow-md text-[#2a3b34] font-bold">
+                <span className="text-base sm:text-lg lg:text-[20px]"> </span>
+                <span className="text-[17px] sm:text-[19px] lg:text-[22px]">GitHub Profile</span>
               </div>
             </motion.a>
           </div>
@@ -188,9 +188,9 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="p-8 lg:p-12 xl:p-14 rounded-[2rem] bg-white dark:bg-[#1a2823]/80 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-none border border-gray-100 dark:border-white/5"
+            className="p-5 sm:p-8 lg:p-12 xl:p-14 rounded-3xl sm:rounded-[2rem] bg-white dark:bg-[#1a2823]/80 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-none border border-gray-100 dark:border-white/5"
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-7 lg:space-y-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 sm:space-y-7 lg:space-y-8">
               {/* Name */}
               <div>
                 <label className="block text-[16px] lg:text-[18px] font-medium text-black dark:text-white mb-3">

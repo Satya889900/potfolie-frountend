@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative border border-[#1b3b36]/10 rounded-3xl p-5 bg-[#e5e8df] dark:bg-[#1c3327] hover:shadow-lg hover:shadow-[#1b3b36]/10 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row gap-5"
+      className="group relative border border-[#1b3b36]/10 rounded-3xl p-4 sm:p-5 bg-[#e5e8df] dark:bg-[#1c3327] hover:shadow-lg hover:shadow-[#1b3b36]/10 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row gap-4 sm:gap-5"
     >
       {/* Mouse spotlight glow */}
       <div
@@ -58,11 +58,11 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col justify-center py-1 flex-1">
-        <h2 className="text-[18px] font-black text-[#1c3327] dark:text-[#e8efe2] group-hover:text-[#b8905b] transition-colors duration-200 leading-snug">
+        <h2 className="text-base sm:text-[18px] font-black text-[#1c3327] dark:text-[#e8efe2] group-hover:text-[#b8905b] transition-colors duration-200 leading-snug">
           {project.title}
         </h2>
 
-        <p className="mt-2 text-[13px] font-semibold leading-relaxed text-[#2a4332] dark:text-[#e8efe2]/70 line-clamp-3">
+        <p className="mt-1 sm:mt-2 text-xs sm:text-[13px] font-semibold leading-relaxed text-[#2a4332] dark:text-[#e8efe2]/70 line-clamp-3">
           {project.description}
         </p>
 

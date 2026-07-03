@@ -9,7 +9,7 @@ import { cloudinaryLoader } from "../../lib/cloudinary";
 export default function CTA() {
   return (
     <section className="py-20 relative overflow-hidden bg-gradient-to-b from-[#f4f6f0] from-50% to-[#1a3023] to-50% dark:from-[#0f1714] dark:to-[#0a1511] transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 48 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function CTA() {
             </div>
 
             {/* Content layer */}
-            <div className="relative z-10 px-8 py-10 md:px-14 md:py-12 overflow-hidden">
+            <div className="relative z-10 px-5 sm:px-8 py-8 sm:py-10 md:px-14 md:py-12 overflow-hidden">
               <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 min-h-[280px]">
 
                 {/* Left: text */}
@@ -48,7 +48,7 @@ export default function CTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="inline-flex items-center gap-2 mb-4 text-[9px] uppercase tracking-[0.28em] font-bold text-[#c4a572]"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 mb-4 text-[8px] sm:text-[9px] uppercase tracking-[0.2em] sm:tracking-[0.28em] font-bold text-[#c4a572]"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#c4a572] animate-pulse" />
                     Available for new Developer
@@ -59,7 +59,7 @@ export default function CTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.15, duration: 0.7 }}
-                    className="text-[30px] lg:text-[38px] font-black tracking-tight leading-tight mb-3 text-[#e8efe2]"
+                    className="text-[26px] min-[400px]:text-[30px] lg:text-[38px] font-black tracking-tight leading-tight mb-3 text-[#e8efe2] break-words"
                   >
                     Let&apos;s Build{" "}
                     <span className="font-serif italic bg-gradient-to-r from-[#e8c97a] via-[#c4a572] to-[#b8905b] bg-clip-text text-transparent">

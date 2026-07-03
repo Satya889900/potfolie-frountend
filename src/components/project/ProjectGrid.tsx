@@ -39,19 +39,19 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
       {/* ── Shared resume-style background (network canvas + stars) ── */}
       <PageBackground />
 
-      <div className="relative z-10 flex-1 flex flex-col min-h-screen py-16 px-6 md:px-10 xl:px-16">
+      <div className="relative z-10 flex-1 flex flex-col min-h-screen py-12 sm:py-16 px-4 sm:px-6 md:px-10 xl:px-16">
         <div className="max-w-6xl mx-auto w-full">
           
           {/* Header */}
-          <div className="mb-12 ml-2">
+          <div className="mb-8 sm:mb-12 ml-1 sm:ml-2">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 mb-2"
+              className="flex items-center gap-2 mb-1 sm:mb-2"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]"></span>
-              <span className="text-[11px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
+              <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
                 MY PORTFOLIO
               </span>
             </motion.div>
@@ -60,7 +60,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]"
+              className="text-4xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]"
             >
               PROJECTS.
             </motion.h1>
@@ -72,7 +72,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
           >
             {projects.map((project) => (
               <motion.div key={project.id} variants={itemVariants}>

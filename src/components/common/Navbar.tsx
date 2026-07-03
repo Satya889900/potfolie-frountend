@@ -46,16 +46,16 @@ export default function Navbar() {
   return (
     <header
       className={`
-        sticky top-0 z-50 w-full h-[88px] flex items-center bg-[#f4f6f0] dark:bg-[#0f1714]
+        sticky top-0 z-50 w-full h-[72px] sm:h-[88px] flex items-center bg-[#f4f6f0] dark:bg-[#0f1714]
         transition-all duration-300 ease-out
         ${scrolled ? "shadow-md" : ""}
       `}
     >
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 md:px-10 xl:px-16">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 sm:px-6 md:px-10 xl:px-16">
         {/* ── logo ─────────────────────────────────── */}
         <Link
           href="/"
-          className="group relative text-2xl font-black tracking-tight select-none"
+          className="group relative text-xl sm:text-2xl font-black tracking-tight select-none"
         >
           <span className="text-[#b8905b]">
             Satya
@@ -123,16 +123,16 @@ export default function Navbar() {
         </nav>
 
         {/* ── right actions ────────────────────────── */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
 
           {/* hamburger */}
           <button
             onClick={() => setOpen(true)}
-            className="relative rounded-lg p-2 transition-colors md:hidden text-[#1b3b36] dark:text-[#e8efe2]"
+            className="relative rounded-lg p-1.5 sm:p-2 transition-colors md:hidden text-[#1b3b36] dark:text-[#e8efe2]"
             aria-label="Open menu"
           >
-            <Menu size={22} />
+            <Menu size={24} />
           </button>
         </div>
       </div>
@@ -159,7 +159,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`fixed right-0 top-0 z-50 flex h-full w-72 flex-col
+              className={`fixed right-0 top-0 z-50 flex h-full w-[80vw] max-w-sm sm:w-72 flex-col
                          bg-[#f4f6f0]/95 dark:bg-[#0f1714]/95 backdrop-blur-2xl
                          border-l border-[#1b3b36]/10 dark:border-white/10
                          shadow-2xl shadow-[#1b3b36]/20 dark:shadow-black/40 md:hidden`}

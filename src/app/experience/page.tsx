@@ -84,17 +84,17 @@ export default function ExperienceTimeline() {
         <rect width="100%" height="100%" fill="url(#netGrid)" />
       </svg>
 
-      <div className="relative z-10 flex-1 flex flex-col py-16 px-6 md:px-10 xl:px-16">
+      <div className="relative z-10 flex-1 flex flex-col py-10 sm:py-16 px-3 sm:px-6 md:px-10 xl:px-16 w-full max-w-full overflow-hidden">
         <div className="max-w-4xl mx-auto w-full">
           {/* Header */}
-          <div className="mb-16 ml-4 md:ml-10">
+          <div className="mb-10 sm:mb-16 ml-1 sm:ml-4 md:ml-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a07c4b]" />
-              <span className="text-[11px] sm:text-[13px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
+              <span className="text-[10px] sm:text-[13px] font-extrabold tracking-[0.25em] text-[#a07c4b] uppercase">
                 MY CAREER PATH
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2]">
+            <h1 className="text-3xl min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight text-[#1b3b36] dark:text-[#e8efe2] break-words">
               WORK EXPERIENCE.
             </h1>
           </div>
@@ -105,10 +105,10 @@ export default function ExperienceTimeline() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
-            className="relative border-l-2 border-[#c4a572]/30 ml-4 md:ml-10 space-y-12 py-2"
+            className="relative border-l-2 border-[#c4a572]/30 ml-2 sm:ml-4 md:ml-10 space-y-10 sm:space-y-12 py-2"
           >
             {experiences.map((item, index) => (
-              <motion.div key={index} variants={itemVariants} className="relative pl-6 sm:pl-8 md:pl-12">
+              <motion.div key={index} variants={itemVariants} className="relative pl-4 sm:pl-8 md:pl-12 w-full">
                 {/* Timeline node */}
                 <div className="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-[#f4f6f0] dark:bg-[#0c1310] border-4 border-[#b8905b] shadow-[0_0_10px_rgba(184,144,91,0.5)] z-10" />
 
@@ -116,10 +116,10 @@ export default function ExperienceTimeline() {
                 <motion.div
                   whileHover={{ y: -3 }}
                   style={{ willChange: "transform" }}
-                  className="p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] border backdrop-blur-sm
+                  className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] border backdrop-blur-sm
                     bg-white/80 border-[#c4a572]/20 hover:bg-white hover:shadow-xl hover:shadow-[#c4a572]/10
                     dark:bg-white/[0.04] dark:border-white/[0.08] dark:hover:bg-white/[0.07]
-                    transition-all duration-300 relative overflow-hidden group"
+                    transition-all duration-300 relative overflow-hidden group w-full"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#b8905b]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

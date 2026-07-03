@@ -156,10 +156,10 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 z-10">
         {/* ── Top grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 py-12 lg:py-16 max-w-6xl mx-auto border-b border-[#e8efe2]/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 py-12 lg:py-16 max-w-6xl mx-auto border-b border-[#e8efe2]/10">
 
           {/* Brand */}
-          <div className="md:col-span-1 pr-4">
+          <div className="sm:col-span-2 lg:col-span-1 pr-0 sm:pr-4">
             <Link href="/" className="inline-block text-3xl font-extrabold tracking-tight mb-2">
               <span className="text-[#b8905b] dark:text-[#c4a572]">Satya</span>
               <span className="text-white dark:text-[#e8efe2]">.</span>
@@ -171,7 +171,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-1 md:pl-8">
+          <div className="sm:col-span-1 lg:pl-8">
             <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
               Quick Links
             </h4>
@@ -190,7 +190,7 @@ export default function Footer() {
           </div>
 
           {/* Explore */}
-          <div className="md:col-span-1 md:pl-4">
+          <div className="sm:col-span-1 lg:pl-4">
             <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
               Explore
             </h4>
@@ -209,7 +209,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1 mt-2 sm:mt-0">
             <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#b8905b] dark:text-[#c4a572]">
               Let&apos;s Contact
             </h4>
@@ -234,14 +234,14 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="flex flex-col items-center justify-between gap-2 py-4 pb-5 text-sm text-[#e8efe2]/40 sm:flex-row flex-wrap">
+        <div className="flex flex-col items-center justify-center sm:justify-between gap-4 sm:gap-2 py-6 sm:py-4 pb-8 sm:pb-5 text-sm text-[#e8efe2]/40 sm:flex-row flex-wrap text-center sm:text-left">
           <p>&copy; {year} Satya Prakash. All rights reserved.</p>
-          <div className="flex items-center gap-3.5">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-3.5">
             <span className="hover:text-[#c4a572] cursor-pointer transition-colors">Terms of Service</span>
             <span className="hover:text-[#c4a572] cursor-pointer transition-colors">Sub-Assignments</span>
-            <span className="hover:text-[#c4a572] cursor-pointer transition-colors">Terms of Service</span>
+            <span className="hover:text-[#c4a572] cursor-pointer transition-colors">Privacy Policy</span>
           </div>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center gap-1 mt-2 sm:mt-0">
             Built with <Heart size={14} className="text-[#b8905b] dark:text-[#c4a572] animate-pulse" /> using React.js
           </p>
         </div>

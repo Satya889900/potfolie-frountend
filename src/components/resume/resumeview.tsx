@@ -267,7 +267,7 @@ export default function ResumeViewer() {
       {isDark && <StarField stars={DARK_STARS} color="#e6c88c" minOpacity={0.55} />}
 
       {/* ── Page content ── */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center py-32 md:py-40 px-6 md:px-10 xl:px-16 min-h-screen">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center py-24 sm:py-32 md:py-40 px-4 sm:px-6 md:px-10 xl:px-16 min-h-screen">
         <div className="max-w-5xl mx-auto w-full flex flex-col items-center text-center">
 
           {/* Header */}
@@ -287,7 +287,7 @@ export default function ResumeViewer() {
 
             {/* Title */}
             <h1
-              className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-7"
+              className="text-4xl min-[400px]:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-4 sm:mb-7 break-words"
               style={{ color: isDark ? "#e8efe2" : "#1b3b36" }}
             >
               RESUME.
@@ -295,7 +295,7 @@ export default function ResumeViewer() {
 
             {/* Subtitle */}
             <p
-              className="text-lg md:text-xl max-w-xl mx-auto font-medium leading-relaxed"
+              className="text-sm min-[400px]:text-base sm:text-lg md:text-xl max-w-xl mx-auto font-medium leading-relaxed px-1 sm:px-0 break-words"
               style={{ color: isDark ? "rgba(232,239,226,0.55)" : "rgba(27,59,54,0.65)" }}
             >
               Download or view my detailed curriculum vitae in PDF format.
@@ -307,7 +307,7 @@ export default function ResumeViewer() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.12 }}
-            className="w-full max-w-[560px] px-12 py-16 rounded-[2.5rem] flex flex-col items-center gap-12 backdrop-blur-sm"
+            className="w-full max-w-[560px] px-4 min-[400px]:px-6 sm:px-12 py-8 sm:py-16 rounded-3xl sm:rounded-[2.5rem] flex flex-col items-center gap-6 sm:gap-12 backdrop-blur-sm"
             style={{
               background: isDark
                 ? "rgba(255,255,255,0.04)"
@@ -333,13 +333,13 @@ export default function ResumeViewer() {
             </div>
 
             {/* Action buttons */}
-            <div className="w-full flex flex-col sm:flex-row gap-5 justify-center">
+            <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center px-2 sm:px-0">
               {/* Download PDF */}
               <a
                 href="/resume/Satya-Prakash-Resume.pdf"
                 download
                 id="resume-download-btn"
-                className="inline-flex items-center justify-center gap-2 px-9 py-[18px] rounded-xl font-bold text-base text-[#1b3b36] hover:scale-[1.04] active:scale-[0.97] transition-transform duration-150"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-9 py-4 sm:py-[18px] rounded-xl font-bold text-sm sm:text-base text-[#1b3b36] hover:scale-[1.04] active:scale-[0.97] transition-transform duration-150"
                 style={{
                   background:
                     "linear-gradient(135deg, #d8c298 0%, #c4a572 55%, #a07c4b 100%)",
@@ -356,7 +356,7 @@ export default function ResumeViewer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="resume-view-btn"
-                className="inline-flex items-center justify-center gap-2 px-9 py-[18px] rounded-xl font-bold text-base hover:scale-[1.04] active:scale-[0.97] transition-all duration-150"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-9 py-4 sm:py-[18px] rounded-xl font-bold text-sm sm:text-base hover:scale-[1.04] active:scale-[0.97] transition-all duration-150"
                 style={{
                   color: isDark ? "#e8efe2" : "#1b3b36",
                   border: isDark
