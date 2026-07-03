@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
       <div aria-hidden className="pointer-events-none absolute top-20 left-0 w-[420px] h-[420px] rounded-full bg-[#1b3b36]/5 dark:bg-[#1b3b36]/20 blur-[90px]" />
       <div aria-hidden className="pointer-events-none absolute bottom-10 right-0 w-[360px] h-[360px] rounded-full bg-[#b8905b]/5 dark:bg-[#b8905b]/10 blur-[80px]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">

@@ -97,7 +97,7 @@ export default function ComingSoonPage({ title, badge }: ComingSoonPageProps) {
       </div>
 
       {/* ── Page content ── */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center py-28 px-6 md:px-10 xl:px-16">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center py-20 sm:py-28 px-4 sm:px-6 md:px-10 xl:px-16 overflow-hidden w-full">
         <div className="max-w-xl mx-auto w-full flex flex-col items-center text-center gap-8">
 
           {/* Badge */}
@@ -118,7 +118,7 @@ export default function ComingSoonPage({ title, badge }: ComingSoonPageProps) {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.06 }}
-            className="text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-none"
+            className="text-3xl min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-none break-words"
             style={{ color: isDark ? "#e8efe2" : "#1b3b36" }}
           >
             {title}
@@ -129,7 +129,7 @@ export default function ComingSoonPage({ title, badge }: ComingSoonPageProps) {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.14 }}
-            className="w-full px-10 py-12 rounded-[2rem] flex flex-col items-center gap-7 backdrop-blur-sm"
+            className="w-full px-5 min-[400px]:px-6 sm:px-10 py-8 sm:py-12 rounded-3xl sm:rounded-[2rem] flex flex-col items-center gap-6 sm:gap-7 backdrop-blur-sm"
             style={{
               background: isDark ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.78)",
               border: isDark

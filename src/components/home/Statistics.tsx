@@ -104,7 +104,7 @@ function StatCard({ item, index }: { item: (typeof stats)[0]; index: number }) {
       className="group relative rounded-[1.5rem] overflow-hidden cursor-default shadow-[0_20px_40px_-10px_rgba(15,23,20,0.6)]"
     >
       {/* Card face */}
-      <div className="relative pt-10 pb-8 px-6 h-full rounded-[1.5rem] transition-all duration-300
+      <div className="relative pt-10 pb-8 px-4 sm:px-6 h-full rounded-[1.5rem] transition-all duration-300
         bg-[#152e2a] border border-[#2a5a40]/30
         hover:-translate-y-2 hover:border-[#b8905b]/30">
 
@@ -224,7 +224,7 @@ export default function Statistics() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Header */}
         <motion.div
