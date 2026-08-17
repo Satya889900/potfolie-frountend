@@ -1,68 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { skillSections } from "../../data/skills";
 
 export default function SkillCategory() {
-  const sections = [
-    {
-      label: "Frontend",
-      suffix: "(as in watermarked_img_16254415848574187010.png)",
-      skills: [
-        { name: "HTML.  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
-        { name: "CSS.  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
-        { name: "JavaScript (ES6+)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
-        { name: "React ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
-        { name: "Next.js ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
-        { name: "Tailwind CSS ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
-      ],
-    },
-    {
-      label: "Backend & APIs",
-      suffix: "(as in watermarked_img_16254415848574187010.png)",
-      skills: [
-        { name: "Node.js.  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
-        { name: "Express  ", icon: "https://cdn.simpleicons.org/express/000000" },
-        { name: "Spring Boot ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
-        { name: "Java  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
-        { name: "MySQL ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
-        { name: "PostgreSQL ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
-        { name: "REST APIs  ", icon: "https://cdn.simpleicons.org/postman/FF6C37" }, // Using postman icon as a proxy for REST APIs
-      ],
-    },
-    {
-      label: "DevOps & Deployment",
-      suffix: "(as in watermarked_img_16254415848574187010.png)",
-      skills: [
-        { name: "AWS EC2 (Added as requested).", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-        { name: "Docker ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-        { name: "CI/CD Pipelines ", icon: "https://cdn.simpleicons.org/githubactions/2088FF" }, // proxy for CI/CD
-        { name: "Git & GitHub ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-        { name: "Vercel ", icon: "https://cdn.simpleicons.org/vercel/000000" },
-        { name: "Render ", icon: "https://cdn.simpleicons.org/render/46E3B7" },
-      ],
-    },
-    {
-      label: "Database",
-      suffix: "",
-      skills: [
-        { name: "MongoDB (Aggregation & Indexition & Indexing)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
-      ],
-    },
-    {
-      label: "Communications & Auth",
-      suffix: "",
-      skills: [
-        { name: "JWT & RBAC (Authentication)  ", icon: "https://cdn.simpleicons.org/jsonwebtokens/000000" },
-        { name: "Socket.io (Real-Time)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg" },
-        { name: "Firebase FCM (Push Notifications)  ", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" },
-        { name: "Brevo (Email/SMS Automation)  ", icon: "https://cdn.simpleicons.org/brevo/009286" },
-        { name: "Twilio (SMS/Voice/OTP)  ", icon: "https://www.vectorlogo.zone/logos/twilio/twilio-icon.svg" },
-        { name: "WhatsApp Business API (Meta)  ", icon: "https://cdn.simpleicons.org/whatsapp/25D366" },
-        { name: "Razorpay Gateway (Payments)  ", icon: "https://cdn.simpleicons.org/razorpay/02042B" },
-      ],
-    },
-  ];
-
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden flex flex-col bg-[#fbfbf9] dark:bg-[#0f1714] font-sans transition-colors duration-300">
       {/* Network Background SVG */}
@@ -121,15 +62,10 @@ export default function SkillCategory() {
 
         {/* Skill Sections */}
         <div className="flex flex-col gap-8">
-          {sections.map((section, idx) => (
+          {skillSections.map((section, idx) => (
             <div key={idx} className="flex flex-col">
               <h2 className="text-xl sm:text-[1.35rem] font-semibold text-[#1a3831] dark:text-[#a8c89c] mb-4 sm:mb-5 flex items-baseline flex-wrap gap-2">
                 <span className="text-[#305a4a] dark:text-[#a8c89c]">— {section.label}.</span>
-                {section.suffix && (
-                  <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal tracking-tight">
-                    {section.suffix}
-                  </span>
-                )}
               </h2>
               
               <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -140,7 +76,6 @@ export default function SkillCategory() {
                     className="flex items-center gap-3 sm:gap-4 bg-white dark:bg-white/[0.05] px-4 sm:px-6 py-3 sm:py-4 rounded-3xl sm:rounded-full border border-gray-100 dark:border-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none max-w-full"
                   >
                     <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shrink-0">
-                      {/* Using regular img for ease, can be optimized later */}
                       <img src={skill.icon} alt={skill.name} className="max-w-full max-h-full object-contain" />
                     </div>
                     <span className="text-sm sm:text-lg font-semibold text-[#1b3b36] dark:text-[#e8efe2] whitespace-normal sm:whitespace-nowrap leading-tight sm:leading-normal flex-1">
@@ -153,9 +88,6 @@ export default function SkillCategory() {
           ))}
         </div>
       </div>
-
-      {/* Footer Strip */}
-    
     </main>
   );
 }

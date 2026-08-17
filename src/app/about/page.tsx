@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import PageBackground from "../../components/common/PageBackground";
 import AboutInfo from "../../components/about/AboutInfo";
+import AcademicTimeline from "../../components/about/AcademicTimeline";
 import Education from "../../components/about/Education";
 import Timeline from "../../components/about/Timeline";
 
@@ -25,6 +26,7 @@ export default function AboutPage() {
       {/* ── Page content above background ── */}
       <div className="relative z-10 flex-1 flex flex-col min-h-screen pb-20">
         <AboutInfo />
+        <AcademicTimeline />
         <Education />
         <Timeline />
       </div>

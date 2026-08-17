@@ -4,10 +4,6 @@ export const navLinks = [
     href: "/",
   },
   {
-    name: "About",
-    href: "/about",
-  },
-  {
     name: "Skills",
     href: "/skills",
   },
@@ -16,22 +12,8 @@ export const navLinks = [
     href: "/projects",
   },
   {
-    name: "Blog",
-    href: "/blog",
-    comingSoon: true, // 🚧 Coming Soon — page is under construction
-  },
-  {
     name: "Contact",
     href: "/contact",
-  },
-  {
-    name: "Experience",
-    href: "/experience",
-  },
-  {
-    name: "Certificates",
-    href: "/certifications",
-    comingSoon: true, // 🚧 Coming Soon — page is under construction
   },
   {
     name: "Resume",

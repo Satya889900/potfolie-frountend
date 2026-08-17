@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className="bg-[#f4f6f0] dark:bg-[#0f1714] text-[#2a3b34] dark:text-gray-200 overflow-x-hidden">
+      <body className="bg-[#f4f6f0] dark:bg-[#0f1714] text-[#2a3b34] dark:text-gray-200 overflow-x-hidden" suppressHydrationWarning>
         <ThemeProvider>
           <NextTopLoader
             color="#b8905b"

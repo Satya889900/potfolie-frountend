@@ -16,8 +16,17 @@ export const cloudinaryLoader = ({
 }) => {
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
+  // If the image is a direct external URL (like https://i.ibb.co/...), load it directly
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    return src;
+  }
+
+  // Fallback to local public path during development for instant preview
+  if (process.env.NODE_ENV === "development") {
+    return src;
+  }
+
   if (!cloudName || cloudName === "your_cloud_name_here") {
-    // Fallback to local public path during development without credentials
     return src;
   }
 
@@ -41,7 +50,13 @@ export const cloudinaryLoader = ({
  * Returns the raw Cloudinary URL without resize transforms.
  */
 export function getCloudinaryUrl(publicId: string): string {
+  if (publicId.startsWith("http://") || publicId.startsWith("https://")) {
+    return publicId;
+  }
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  if (process.env.NODE_ENV === "development") {
+    return `/${publicId}`;
+  }
   if (!cloudName || cloudName === "your_cloud_name_here") {
     return `/${publicId}`;
   }

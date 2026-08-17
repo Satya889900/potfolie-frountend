@@ -5,38 +5,26 @@ import { Heart } from "lucide-react";
 import {
   GithubIcon,
   LinkedinIcon,
-  TwitterIcon,
   InstagramIcon,
+  FacebookIcon,
 } from "./BrandIcons";
-
-function YoutubeIcon({ size = 16, className }: { size?: number; className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z" />
-    </svg>
-  );
-}
 
 const quickLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Skills", href: "/skills" },
   { name: "Projects", href: "/projects" },
-  { name: "Blog", href: "/blog" },
 ];
 
 const exploreLinks = [
   { name: "Contact", href: "/contact" },
-  { name: "Experience", href: "/experience" },
-  { name: "Certificates", href: "/certifications" },
   { name: "Resume", href: "/resume" },
 ];
 
 const socialIcons = [
-  { name: "Twitter", icon: TwitterIcon, href: "https://twitter.com" },
-  { name: "GitHub", icon: GithubIcon, href: "https://github.com" },
-  { name: "YouTube", icon: YoutubeIcon, href: "https://youtube.com" },
   { name: "LinkedIn", icon: LinkedinIcon, href: "https://linkedin.com/in/satya-prakash-542611211" },
+  { name: "GitHub", icon: GithubIcon, href: "https://github.com/Satya889900" },
+  { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/unbeatable_satya77/" },
+  { name: "Facebook", icon: FacebookIcon, href: "https://www.facebook.com/profile.php?id=100060791974581" },
 ];
 
 /* Triangle mesh polygon/vertex data shared between left and right groups */

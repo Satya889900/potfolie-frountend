@@ -12,7 +12,7 @@ export default function ExperienceTimeline() {
       role: "MERN Stack Developer",
       duration: "2024 - 2025",
       description:
-        "Built Student Management System, Employee Management System and Full Stack Applications.",
+        "Built NovaMind AI (ChatGPT-style SaaS) and other full-stack MERN & Next.js applications.",
     },
   ];
 

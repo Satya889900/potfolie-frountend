@@ -6,7 +6,7 @@ import { useRef, MouseEvent, useEffect } from "react";
 
 const stats = [
   {
-    value: 10,
+    value: 12,
     suffix: "+",
     label: "Months Experience",
     sublabel: "Building production-ready apps",

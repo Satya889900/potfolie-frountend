@@ -1,3 +1,8 @@
+export interface ProjectImage {
+  src: string;
+  caption: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -12,4 +17,6 @@ export interface Project {
   liveUrl: string;
 
   image: string;
+  category: "company" | "personal";
+  images?: ProjectImage[];
 }
