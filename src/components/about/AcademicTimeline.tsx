@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, Languages, Calendar, MapPin, Star, BadgeCheck } from "lucide-react";
 
-export default function AcademicTimeline() {
+interface AcademicTimelineProps {
+  showLanguages?: boolean;
+}
+
+export default function AcademicTimeline({ showLanguages = true }: AcademicTimelineProps) {
   const education = [
     {
       degree: "B.Tech – Computer Science & Engineering",
@@ -163,41 +167,43 @@ export default function AcademicTimeline() {
             </div>
 
             {/* Languages Block */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-[#b8905b]/10 text-[#b8905b] flex items-center justify-center dark:bg-[#b8905b]/20">
-                  <Languages size={20} />
+            {showLanguages && (
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-[#b8905b]/10 text-[#b8905b] flex items-center justify-center dark:bg-[#b8905b]/20">
+                    <Languages size={20} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-[#a07c4b] uppercase block">
+                      Communication
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-black text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight">
+                      Languages.
+                    </h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] font-extrabold tracking-[0.2em] text-[#a07c4b] uppercase block">
-                    Communication
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-[#1b3b36] dark:text-[#e8efe2] uppercase tracking-tight">
-                    Languages.
-                  </h3>
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {languages.map((lang, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1, duration: 0.5 }}
-                    className="p-5 rounded-xl border backdrop-blur-sm bg-white/70 border-[#c4a572]/15 hover:bg-white hover:shadow-md dark:bg-white/[0.03] dark:border-white/[0.07] dark:hover:bg-white/[0.05] transition-all duration-300 flex flex-col gap-1"
-                  >
-                    <span className="text-base font-black text-[#1b3b36] dark:text-[#e8efe2]">
-                      {lang.name}
-                    </span>
-                    <span className="text-xs font-bold text-[#b8905b]">
-                      {lang.proficiency}
-                    </span>
-                  </motion.div>
-                ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {languages.map((lang, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.1, duration: 0.5 }}
+                      className="p-5 rounded-xl border backdrop-blur-sm bg-white/70 border-[#c4a572]/15 hover:bg-white hover:shadow-md dark:bg-white/[0.03] dark:border-white/[0.07] dark:hover:bg-white/[0.05] transition-all duration-300 flex flex-col gap-1"
+                    >
+                      <span className="text-base font-black text-[#1b3b36] dark:text-[#e8efe2]">
+                        {lang.name}
+                      </span>
+                      <span className="text-xs font-bold text-[#b8905b]">
+                        {lang.proficiency}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
           </div>
 

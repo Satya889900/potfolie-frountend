@@ -14,7 +14,7 @@ export default function HomePage() {
       <Hero />
       <TechMarquee />
       <AboutInfo />
-      <AcademicTimeline />
+      <AcademicTimeline showLanguages={false} />
       <Education />
       <Timeline />
       <Statistics />
