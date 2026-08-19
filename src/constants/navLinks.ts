@@ -21,8 +21,4 @@ export const navLinks: NavLink[] = [
     name: "Contact",
     href: "/contact",
   },
-  {
-    name: "Resume",
-    href: "/resume",
-  },
 ];

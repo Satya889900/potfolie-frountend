@@ -166,19 +166,24 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 w-full">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full flex-wrap">
               <Link href="/projects"
-                className="flex items-center gap-1 md:gap-2 px-2 sm:px-4 md:px-6 py-1.5 md:py-3 rounded-full text-[6px] sm:text-[8px] md:text-[13px] font-bold text-[#1b3b36] bg-gradient-to-r from-[#c4a572] to-[#a07c4b] shadow-[0_4px_10px_rgba(160,124,75,0.3)] hover:scale-105 transition-transform duration-300 whitespace-nowrap">
+                className="flex items-center gap-1 md:gap-2 px-2 sm:px-4 py-1.5 md:py-2.5 rounded-full text-[6px] sm:text-[8px] md:text-[12px] font-bold text-[#1b3b36] bg-gradient-to-r from-[#c4a572] to-[#a07c4b] shadow-[0_4px_10px_rgba(160,124,75,0.3)] hover:scale-105 transition-transform duration-300 whitespace-nowrap">
                 Projects
                 <ChevronRight size={10} strokeWidth={3} className="md:w-3.5 md:h-3.5" />
               </Link>
               <Link href="/about"
-                className="group flex items-center gap-1 md:gap-2 text-[6px] sm:text-[8px] md:text-[13px] font-extrabold text-[#1b3b36] hover:text-[#a07c4b] transition-colors duration-300 whitespace-nowrap">
+                className="group flex items-center gap-1 md:gap-2 text-[6px] sm:text-[8px] md:text-[12px] font-extrabold text-[#1b3b36] hover:text-[#a07c4b] transition-colors duration-300 whitespace-nowrap">
                 My Work
-                <div className="w-3 h-3 sm:w-5 sm:h-5 md:w-7 md:h-7 rounded-full border-2 border-current flex items-center justify-center text-[#1b3b36] group-hover:text-[#a07c4b] transition-colors">
-                  <Play size={6} fill="currentColor" className="ml-0.5 md:w-2.5 md:h-2.5" />
+                <div className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full border-2 border-current flex items-center justify-center text-[#1b3b36] group-hover:text-[#a07c4b] transition-colors">
+                  <Play size={6} fill="currentColor" className="ml-0.5 md:w-2 md:h-2" />
                 </div>
               </Link>
+          
+              <a href="/resume/Satya-Prakash-Resume.pdf" download
+                className="flex items-center gap-1 md:gap-2 px-2 sm:px-4 py-1.5 md:py-2.5 rounded-full text-[6px] sm:text-[8px] md:text-[12px] font-bold text-[#1b3b36] bg-[#b8905b]/20 hover:bg-[#b8905b]/30 dark:text-[#e8efe2] dark:bg-[#b8905b]/30 dark:hover:bg-[#b8905b]/40 transition-all duration-300 whitespace-nowrap">
+                Download CV
+              </a>
             </div>
           </motion.div>
 

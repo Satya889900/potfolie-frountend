@@ -49,7 +49,7 @@ export default function AcademicTimeline({ showLanguages = true }: AcademicTimel
 
   return (
     <section className="relative w-full py-16 px-6 md:px-10 xl:px-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10 ml-2 lg:ml-8">
+      <div className="max-w-6xl mx-auto relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           

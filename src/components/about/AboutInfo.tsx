@@ -145,17 +145,17 @@ export default function AboutInfo() {
               </div>
             ))}
 
-            {/* View Projects Button */}
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-2"
+              className="mt-2 flex flex-wrap gap-4"
             >
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-xl font-bold text-[12px] text-[#1b3b36] shadow-[0_10px_20px_rgba(184,144,91,0.25)] hover:scale-105 transition-transform duration-300"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-[12px] text-[#1b3b36] shadow-[0_10px_20px_rgba(184,144,91,0.25)] hover:scale-105 transition-transform duration-300"
                 style={{
                   background: "linear-gradient(135deg, #d3bb93 0%, #c8aa76 60%, #a07c4b 100%)",
                 }}
@@ -163,6 +163,24 @@ export default function AboutInfo() {
                 View Projects 
                 <span className="text-[14px] leading-none ml-1 font-black">&gt;</span>
               </Link>
+
+              <Link
+                href="/resume"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-[12px] text-[#1b3b36] border border-[#1b3b36]/20 hover:bg-[#1b3b36]/5 dark:text-[#e8efe2] dark:border-white/20 dark:hover:bg-white/5 hover:scale-105 transition-all duration-300"
+              >
+                View Resume
+              </Link>
+
+              <a
+                href="/resume/Satya-Prakash-Resume.pdf"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-[12px] text-[#1b3b36] hover:scale-105 transition-transform duration-300"
+                style={{
+                  background: "linear-gradient(135deg, #c4a572 0%, #b8905b 100%)",
+                }}
+              >
+                Download Resume
+              </a>
             </motion.div>
           </motion.div>
         </div>
