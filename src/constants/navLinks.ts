@@ -1,4 +1,10 @@
-export const navLinks = [
+export interface NavLink {
+  name: string;
+  href: string;
+  comingSoon?: boolean;
+}
+
+export const navLinks: NavLink[] = [
   {
     name: "Home",
     href: "/",
